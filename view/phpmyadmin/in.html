@@ -1,0 +1,627 @@
+<div id="page_content">
+    <div id="page_settings_modal">
+        <div class="page_settings">
+            <form method="post"
+                  action="server_import.php?db=&amp;table=&amp;server=1&amp;target=&amp;token=b7cde5c9cc528362361e168a36c84ae5"
+                  class="config-form disableAjax"><input type="hidden" name="tab_hash" value=""><input type="hidden"
+                                                                                                       name="check_page_refresh"
+                                                                                                       id="check_page_refresh"
+                                                                                                       value="">
+                <input type="hidden" name="token" value="b7cde5c9cc528362361e168a36c84ae5">
+                <input type="hidden" name="submit_save" value="Import">
+                <ul class="tabs">
+
+                    <li class="active">
+
+                        <a href="#Import_defaults">
+                            导入选项 </a>
+                    </li>
+                    <li>
+
+                        <a href="#Sql">
+                            SQL </a>
+                    </li>
+                    <li>
+
+                        <a href="#Csv">
+                            CSV </a>
+                    </li>
+                    <li>
+
+                        <a href="#Open_Document">
+                            OpenDocument </a>
+                    </li>
+                </ul>
+                <br clear="right">
+                <div class="tabs_contents">
+                    <fieldset class="optbox" id="Import_defaults" style="display: block;">
+                        <legend>导入选项</legend>
+                        <p>自定义默认导入选项。</p>
+                        <table width="100%" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <th><label for="Import-format">导入文件的格式</label>
+                                    <small>默认格式；请注意根据位置（数据库或表）的不同该列表将有所变化，只有 SQL 是一直可用的。</small>
+                                </th>
+                                <td><select name="Import-format" id="Import-format">
+                                    <option value="csv">csv</option>
+                                    <option value="docsql">docsql</option>
+                                    <option value="ldi">ldi</option>
+                                    <option value="sql" selected="selected">sql</option>
+                                </select><a class="restore-default" href="#Import-format" title="还原为默认值"
+                                            style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif"
+                                                                                               title="" alt=""
+                                                                                               class="icon ic_s_reload"
+                                                                                               style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="Import-charset">文件字符集</label></th>
+                                <td><select name="Import-charset" id="Import-charset">
+                                    <option value="" selected="selected"></option>
+                                    <option value="iso-8859-1">iso-8859-1</option>
+                                    <option value="iso-8859-2">iso-8859-2</option>
+                                    <option value="iso-8859-3">iso-8859-3</option>
+                                    <option value="iso-8859-4">iso-8859-4</option>
+                                    <option value="iso-8859-5">iso-8859-5</option>
+                                    <option value="iso-8859-6">iso-8859-6</option>
+                                    <option value="iso-8859-7">iso-8859-7</option>
+                                    <option value="iso-8859-8">iso-8859-8</option>
+                                    <option value="iso-8859-9">iso-8859-9</option>
+                                    <option value="iso-8859-10">iso-8859-10</option>
+                                    <option value="iso-8859-11">iso-8859-11</option>
+                                    <option value="iso-8859-12">iso-8859-12</option>
+                                    <option value="iso-8859-13">iso-8859-13</option>
+                                    <option value="iso-8859-14">iso-8859-14</option>
+                                    <option value="iso-8859-15">iso-8859-15</option>
+                                    <option value="windows-1250">windows-1250</option>
+                                    <option value="windows-1251">windows-1251</option>
+                                    <option value="windows-1252">windows-1252</option>
+                                    <option value="windows-1256">windows-1256</option>
+                                    <option value="windows-1257">windows-1257</option>
+                                    <option value="koi8-r">koi8-r</option>
+                                    <option value="big5">big5</option>
+                                    <option value="gb2312">gb2312</option>
+                                    <option value="utf-16">utf-16</option>
+                                    <option value="utf-8">utf-8</option>
+                                    <option value="utf-7">utf-7</option>
+                                    <option value="x-user-defined">x-user-defined</option>
+                                    <option value="euc-jp">euc-jp</option>
+                                    <option value="ks_c_5601-1987">ks_c_5601-1987</option>
+                                    <option value="tis-620">tis-620</option>
+                                    <option value="SHIFT_JIS">SHIFT_JIS</option>
+                                </select><a class="restore-default" href="#Import-charset" title="还原为默认值"
+                                            style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif"
+                                                                                               title="" alt=""
+                                                                                               class="icon ic_s_reload"
+                                                                                               style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="Import-allow_interrupt">部分导入：允许中断</label>
+                                    <small>允许脚本在即将超时时中断导入。尽管这样会中断事务，但在导入大文件时也许是个好方法。</small>
+                                </th>
+                                <td><span class="checkbox"><input type="checkbox" name="Import-allow_interrupt"
+                                                                  id="Import-allow_interrupt"
+                                                                  checked="checked"></span><a class="restore-default"
+                                                                                              href="#Import-allow_interrupt"
+                                                                                              title="还原为默认值"
+                                                                                              style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr>
+                                <th><label for="Import-skip_queries">部分导入：跳过查询</label>
+                                    <small>要跳过的查询数量。</small>
+                                </th>
+                                <td><input type="number" name="Import-skip_queries" id="Import-skip_queries"
+                                           value="0"><a class="restore-default" href="#Import-skip_queries"
+                                                        title="还原为默认值"
+                                                        style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                    <fieldset class="optbox" id="Sql" style="display: none;">
+                        <legend>SQL</legend>
+                        <p>自定义默认选项。</p>
+                        <table width="100%" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <th><label for="Import-sql_compatibility">SQL 兼容模式</label></th>
+                                <td><select name="Import-sql_compatibility" id="Import-sql_compatibility">
+                                    <option value="NONE" selected="selected">NONE</option>
+                                    <option value="ANSI">ANSI</option>
+                                    <option value="DB2">DB2</option>
+                                    <option value="MAXDB">MAXDB</option>
+                                    <option value="MYSQL323">MYSQL323</option>
+                                    <option value="MYSQL40">MYSQL40</option>
+                                    <option value="MSSQL">MSSQL</option>
+                                    <option value="ORACLE">ORACLE</option>
+                                    <option value="TRADITIONAL">TRADITIONAL</option>
+                                </select><a class="restore-default" href="#Import-sql_compatibility" title="还原为默认值"
+                                            style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif"
+                                                                                               title="" alt=""
+                                                                                               class="icon ic_s_reload"
+                                                                                               style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="Import-sql_no_auto_value_on_zero">值为零时不自增</label></th>
+                                <td><span class="checkbox"><input type="checkbox"
+                                                                  name="Import-sql_no_auto_value_on_zero"
+                                                                  id="Import-sql_no_auto_value_on_zero"
+                                                                  checked="checked"></span><a class="restore-default"
+                                                                                              href="#Import-sql_no_auto_value_on_zero"
+                                                                                              title="还原为默认值"
+                                                                                              style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr>
+                                <th><label for="Import-sql_read_as_multibytes">以多字节读取</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Import-sql_read_as_multibytes"
+                                                                  id="Import-sql_read_as_multibytes"></span><a
+                                        class="restore-default" href="#Import-sql_read_as_multibytes" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                    <fieldset class="optbox" id="Csv" style="display: none;">
+                        <legend>CSV</legend>
+                        <p>自定义默认选项。</p>
+                        <table width="100%" cellspacing="0">
+                            <tbody>
+                            <tr class="group-header group-header-1">
+                                <th colspan="2">CSV</th>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-csv_replace">重复的键更新时添加</label>
+                                    <small>导入发现重复键时更新数据</small>
+                                </th>
+                                <td><span class="checkbox"><input type="checkbox" name="Import-csv_replace"
+                                                                  id="Import-csv_replace"></span><a
+                                        class="restore-default" href="#Import-csv_replace" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-csv_ignore">忽略插入错误</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Import-csv_ignore"
+                                                                  id="Import-csv_ignore"></span><a
+                                        class="restore-default" href="#Import-csv_ignore" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-csv_terminated">字段分隔符</label></th>
+                                <td><input type="text" size="25" name="Import-csv_terminated" id="Import-csv_terminated"
+                                           value=","><a class="restore-default" href="#Import-csv_terminated"
+                                                        title="还原为默认值"
+                                                        style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-csv_enclosed">内容分隔符</label></th>
+                                <td><input type="text" size="25" name="Import-csv_enclosed" id="Import-csv_enclosed"
+                                           value="&quot;"><a class="restore-default" href="#Import-csv_enclosed"
+                                                             title="还原为默认值"
+                                                             style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-csv_escaped">内容转义符</label></th>
+                                <td><input type="text" size="25" name="Import-csv_escaped" id="Import-csv_escaped"
+                                           value="&quot;"><a class="restore-default" href="#Import-csv_escaped"
+                                                             title="还原为默认值"
+                                                             style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-csv_col_names">换行符</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Import-csv_col_names"
+                                                                  id="Import-csv_col_names"></span><a
+                                        class="restore-default" href="#Import-csv_col_names" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-header group-header-1">
+                                <th colspan="2">CSV 使用 LOAD DATA</th>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-ldi_replace">重复的键更新时添加</label>
+                                    <small>导入发现重复键时更新数据</small>
+                                </th>
+                                <td><span class="checkbox"><input type="checkbox" name="Import-ldi_replace"
+                                                                  id="Import-ldi_replace"></span><a
+                                        class="restore-default" href="#Import-ldi_replace" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-ldi_ignore">忽略插入错误</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Import-ldi_ignore"
+                                                                  id="Import-ldi_ignore"></span><a
+                                        class="restore-default" href="#Import-ldi_ignore" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-ldi_terminated">字段分隔符</label></th>
+                                <td><input type="text" size="25" name="Import-ldi_terminated" id="Import-ldi_terminated"
+                                           value=";"><a class="restore-default" href="#Import-ldi_terminated"
+                                                        title="还原为默认值"
+                                                        style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-ldi_enclosed">内容分隔符</label></th>
+                                <td><input type="text" size="25" name="Import-ldi_enclosed" id="Import-ldi_enclosed"
+                                           value="&quot;"><a class="restore-default" href="#Import-ldi_enclosed"
+                                                             title="还原为默认值"
+                                                             style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-ldi_escaped">内容转义符</label></th>
+                                <td><input type="text" size="25" name="Import-ldi_escaped" id="Import-ldi_escaped"
+                                           value="\"><a class="restore-default" href="#Import-ldi_escaped"
+                                                        title="还原为默认值"
+                                                        style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-ldi_local_option">使用 LOCAL 关键字</label></th>
+                                <td><select name="Import-ldi_local_option" id="Import-ldi_local_option">
+                                    <option value="auto" selected="selected">auto</option>
+                                    <option value="1">是</option>
+                                    <option value="0">否</option>
+                                </select><a class="restore-default" href="#Import-ldi_local_option" title="还原为默认值"
+                                            style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif"
+                                                                                               title="" alt=""
+                                                                                               class="icon ic_s_reload"
+                                                                                               style="display: none;"></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                    <fieldset class="optbox" id="Open_Document" style="display: none;">
+                        <legend>OpenDocument</legend>
+                        <p>自定义默认选项。</p>
+                        <table width="100%" cellspacing="0">
+                            <tbody>
+                            <tr class="group-header group-header-1">
+                                <th colspan="2">OpenDocument Spreadsheet</th>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-ods_col_names">首行为字段名</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Import-ods_col_names"
+                                                                  id="Import-ods_col_names"></span><a
+                                        class="restore-default" href="#Import-ods_col_names" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-ods_empty_rows">不导入空行</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Import-ods_empty_rows"
+                                                                  id="Import-ods_empty_rows" checked="checked"></span><a
+                                        class="restore-default" href="#Import-ods_empty_rows" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-ods_recognize_percentages">导入百分数为小数（12.00% 将被导入为 .12）</label>
+                                </th>
+                                <td><span class="checkbox"><input type="checkbox"
+                                                                  name="Import-ods_recognize_percentages"
+                                                                  id="Import-ods_recognize_percentages"
+                                                                  checked="checked"></span><a class="restore-default"
+                                                                                              href="#Import-ods_recognize_percentages"
+                                                                                              title="还原为默认值"
+                                                                                              style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Import-ods_recognize_currency">导入货币（$5.00 将被导入为 5.00）</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Import-ods_recognize_currency"
+                                                                  id="Import-ods_recognize_currency" checked="checked"></span><a
+                                        class="restore-default" href="#Import-ods_recognize_currency" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                </div>
+            </form>
+            <script type="text/javascript">
+                if (typeof configInlineParams === "undefined" || !Array.isArray(configInlineParams)) configInlineParams = [];
+                configInlineParams.push(function () {
+                    validateField('Import-skip_queries', 'PMA_validateNonNegativeNumber', true);
+                    validateField('Import-csv_terminated', 'PMA_validateByRegex', true, ['/^.$/']);
+                    validateField('Import-csv_enclosed', 'PMA_validateByRegex', true, ['/^.?$/']);
+                    validateField('Import-csv_escaped', 'PMA_validateByRegex', true, ['/^.$/']);
+                    validateField('Import-ldi_terminated', 'PMA_validateByRegex', true, ['/^.$/']);
+                    validateField('Import-ldi_enclosed', 'PMA_validateByRegex', true, ['/^.?$/']);
+                    validateField('Import-ldi_escaped', 'PMA_validateByRegex', true, ['/^.$/']);
+                    $.extend(PMA_messages, {
+                        'error_nan_p': '请输入正数！',
+                        'error_nan_nneg': '请输入非负数！',
+                        'error_incorrect_port': '请输入有效的端口号！',
+                        'error_invalid_value': '值错误！',
+                        'error_value_lte': '值应小于或等于 %s！'
+                    });
+                    $.extend(defaultValues, {
+                        'Import-format': ['sql'],
+                        'Import-charset': [''],
+                        'Import-allow_interrupt': true,
+                        'Import-skip_queries': '0',
+                        'Import-sql_compatibility': ['NONE'],
+                        'Import-sql_no_auto_value_on_zero': true,
+                        'Import-sql_read_as_multibytes': false,
+                        'Import-csv_replace': false,
+                        'Import-csv_ignore': false,
+                        'Import-csv_terminated': ',',
+                        'Import-csv_enclosed': '\"',
+                        'Import-csv_escaped': '\"',
+                        'Import-csv_col_names': false,
+                        'Import-ldi_replace': false,
+                        'Import-ldi_ignore': false,
+                        'Import-ldi_terminated': ';',
+                        'Import-ldi_enclosed': '\"',
+                        'Import-ldi_escaped': '\\',
+                        'Import-ldi_local_option': ['auto'],
+                        'Import-ods_col_names': false,
+                        'Import-ods_empty_rows': true,
+                        'Import-ods_recognize_percentages': true,
+                        'Import-ods_recognize_currency': true
+                    });
+                });
+                if (typeof configScriptLoaded !== "undefined" && configInlineParams) loadInlineConfig();
+            </script>
+        </div>
+    </div>
+    <iframe id="import_upload_iframe" name="import_upload_iframe" width="1" height="1" style="display: none;"></iframe>
+    <div id="import_form_status" style="display: none;"></div>
+    <div id="importmain"><img src="./themes/pmahomme/img/ajax_clock_small.gif" width="16" height="16" alt="ajax clock"
+                              style="display: none;">
+        <script type="text/javascript">    //<![CDATA[
+        $(function () {
+            $("#buttonGo").bind("click", function () {
+                $("#upload_form_form").css("display", "none");
+                $('#upload_form_status_info').html('<img src="./themes/pmahomme/img/ajax_clock_small.gif" width="16" height="16" alt="ajax clock" /> 正在上传，没有详细信息，请稍候。<a href="./doc/html/faq.html#faq2-9" target="documentation"><img src="themes/dot.gif" title="文档" alt="文档" class="icon ic_b_help" /></a>');
+                $("#upload_form_status").css("display", "none");
+            });
+        });    //]]>
+        </script>
+        <form id="import_file_form" action="import.php" method="post" enctype="multipart/form-data" name="import"
+              class="ajax"><input type="hidden" name="noplugin" value="5b90eec4077d7"><input type="hidden" name="token"
+                                                                                             value="b7cde5c9cc528362361e168a36c84ae5">
+            <input type="hidden" name="import_type" value="server">
+            <div class="exportoptions" id="header"><h2><img src="themes/dot.gif" title="导入" alt="导入"
+                                                            class="icon ic_b_import">导入到当前服务器 </h2></div>
+            <div class="importoptions"><h3>要导入的文件：</h3>
+                <div class="formelementrow" id="compression_info">文件可能已压缩 (gzip, bzip2, zip) 或未压缩。<br>压缩文件名必须以 <b>.[格式].[压缩方式]</b>
+                    结尾。如：<b>.sql.zip</b></div>
+                <div class="formelementrow" id="upload_form"><label for="input_import_file">从计算机中上传：</label>
+                    <div id="upload_form_status" style="display: none;"></div>
+                    <div id="upload_form_status_info" style="display: none;"></div>
+                    <input type="file" name="import_file" id="input_import_file">(最大限制：128 MB)
+                    <input type="hidden" name="MAX_FILE_SIZE" value="134217728">
+                    <br>您可在各页面间拖放文件。
+                </div>
+                <div class="formelementrow" id="charaset_of_file"><label for="charset_of_file">文件的字符集：</label><select
+                        id="charset_of_file" name="charset_of_file" size="1">
+                    <option value="iso-8859-1">iso-8859-1</option>
+                    <option value="iso-8859-2">iso-8859-2</option>
+                    <option value="iso-8859-3">iso-8859-3</option>
+                    <option value="iso-8859-4">iso-8859-4</option>
+                    <option value="iso-8859-5">iso-8859-5</option>
+                    <option value="iso-8859-6">iso-8859-6</option>
+                    <option value="iso-8859-7">iso-8859-7</option>
+                    <option value="iso-8859-8">iso-8859-8</option>
+                    <option value="iso-8859-9">iso-8859-9</option>
+                    <option value="iso-8859-10">iso-8859-10</option>
+                    <option value="iso-8859-11">iso-8859-11</option>
+                    <option value="iso-8859-12">iso-8859-12</option>
+                    <option value="iso-8859-13">iso-8859-13</option>
+                    <option value="iso-8859-14">iso-8859-14</option>
+                    <option value="iso-8859-15">iso-8859-15</option>
+                    <option value="windows-1250">windows-1250</option>
+                    <option value="windows-1251">windows-1251</option>
+                    <option value="windows-1252">windows-1252</option>
+                    <option value="windows-1256">windows-1256</option>
+                    <option value="windows-1257">windows-1257</option>
+                    <option value="koi8-r">koi8-r</option>
+                    <option value="big5">big5</option>
+                    <option value="gb2312">gb2312</option>
+                    <option value="utf-16">utf-16</option>
+                    <option value="utf-8" selected="selected">utf-8</option>
+                    <option value="utf-7">utf-7</option>
+                    <option value="x-user-defined">x-user-defined</option>
+                    <option value="euc-jp">euc-jp</option>
+                    <option value="ks_c_5601-1987">ks_c_5601-1987</option>
+                    <option value="tis-620">tis-620</option>
+                    <option value="SHIFT_JIS">SHIFT_JIS</option>
+                </select><br></div>
+            </div>
+            <div class="importoptions"><h3>部分导入：</h3>
+                <div class="formelementrow"><input type="checkbox" name="allow_interrupt" value="yes"
+                                                   id="checkbox_allow_interrupt" checked="checked"> <label
+                        for="checkbox_allow_interrupt">在导入时脚本若检测到可能需要花费很长时间（接近PHP超时的限定）则允许中断。<i>(尽管这会中断事务，但在导入大文件时是个很好的方法。)</i></label><br>
+                </div>
+                <div class="formelementrow"><label for="text_skip_queries">Skip this number of queries (for SQL)
+                    starting from the first one:</label> <input type="number" name="skip_queries" value="0"
+                                                                id="text_skip_queries" min="0"></div>
+            </div>
+            <div class="importoptions"><h3>其它选项：</h3>
+                <div class="formelementrow"><input type="hidden" name="fk_checks" value="0"><input type="checkbox"
+                                                                                                   name="fk_checks"
+                                                                                                   id="fk_checks"
+                                                                                                   value="1"
+                                                                                                   checked="checked"><label
+                        for="fk_checks">启用外键约束</label></div>
+            </div>
+            <div class="importoptions"><h3>格式：</h3><select id="plugins" name="format">
+                <option value="csv">CSV</option>
+                <option value="mediawiki">MediaWiki 表</option>
+                <option value="ods">OpenDocument Spreadsheet</option>
+                <option value="shp">ESRI 图形文件</option>
+                <option selected="selected" value="sql">SQL</option>
+                <option value="xml">XML</option>
+            </select>
+                <input type="hidden" id="force_file_csv" value="true">
+                <input type="hidden" id="force_file_mediawiki" value="true">
+                <input type="hidden" id="force_file_ods" value="true">
+                <input type="hidden" id="force_file_shp" value="true">
+                <input type="hidden" id="force_file_sql" value="true">
+                <input type="hidden" id="force_file_xml" value="true">
+                <div id="import_notification"></div>
+            </div>
+            <div class="importoptions" id="format_specific_opts"><h3>格式特定选项：</h3>
+                <p class="no_js_msg" id="scroll_to_options_msg" style="display: none;">Scroll down to fill in the
+                    options for the selected format and ignore the options for other formats.</p>
+                <div id="csv_options" class="format_specific_options"
+                     style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                    <div class="export_sub_options" id="csv_general_opts">
+                        <ul>
+                            <li>
+                                <input type="checkbox" name="csv_replace" value="something"
+                                       id="checkbox_csv_replace"><label for="checkbox_csv_replace">Update data when
+                                duplicate keys found on import (add ON DUPLICATE KEY UPDATE)</label></li>
+                            <li>
+                                <label for="text_csv_terminated" class="desc">字段分隔符：</label><input type="text"
+                                                                                                   name="csv_terminated"
+                                                                                                   value=","
+                                                                                                   id="text_csv_terminated"
+                                                                                                   size="2"></li>
+                            <li>
+                                <label for="text_csv_enclosed" class="desc">内容分隔符：</label><input type="text"
+                                                                                                 name="csv_enclosed"
+                                                                                                 value="&quot;"
+                                                                                                 id="text_csv_enclosed"
+                                                                                                 size="2" maxlength="2">
+                            </li>
+                            <li>
+                                <label for="text_csv_escaped" class="desc">内容转义符：</label><input type="text"
+                                                                                                name="csv_escaped"
+                                                                                                value="&quot;"
+                                                                                                id="text_csv_escaped"
+                                                                                                size="2" maxlength="2">
+                            </li>
+                            <li>
+                                <label for="text_csv_new_line" class="desc">换行符：</label><input type="text"
+                                                                                               name="csv_new_line"
+                                                                                               value="auto"
+                                                                                               id="text_csv_new_line"
+                                                                                               size="2"></li>
+                            <li>
+                                <input type="checkbox" name="csv_col_names" value="something"
+                                       id="checkbox_csv_col_names"><label for="checkbox_csv_col_names">文件首行包含数据表的字段名 <i>(若未选此项，首行将被认为是数据)</i></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="csv_ignore" value="something"
+                                       id="checkbox_csv_ignore"><label for="checkbox_csv_ignore">忽略插入错误</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="mediawiki_options" class="format_specific_options"
+                     style="display: none; border: 0px; margin: 0px; padding: 0px;"><p>该格式没有选项</p></div>
+                <div id="ods_options" class="format_specific_options"
+                     style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                    <div class="export_sub_options" id="ods_general_opts">
+                        <ul>
+                            <li>
+                                <input type="checkbox" name="ods_col_names" value="something"
+                                       id="checkbox_ods_col_names"><label for="checkbox_ods_col_names">文件首行包含数据表的字段名 <i>(若未选此项，首行将被认为是数据)</i></label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="ods_empty_rows" value="something"
+                                       id="checkbox_ods_empty_rows" checked="checked"><label
+                                    for="checkbox_ods_empty_rows">不导入空行</label></li>
+                            <li>
+                                <input type="checkbox" name="ods_recognize_percentages" value="something"
+                                       id="checkbox_ods_recognize_percentages" checked="checked"><label
+                                    for="checkbox_ods_recognize_percentages">导入百分数为小数 <i>(如: 12.00% 将被导入为
+                                .12)</i></label></li>
+                            <li>
+                                <input type="checkbox" name="ods_recognize_currency" value="something"
+                                       id="checkbox_ods_recognize_currency" checked="checked"><label
+                                    for="checkbox_ods_recognize_currency">导入货币 <i>(如: $5.00 将被导入为 5.00)</i></label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="shp_options" class="format_specific_options"
+                     style="display: none; border: 0px; margin: 0px; padding: 0px;"><p>该格式没有选项</p></div>
+                <div id="sql_options" class="format_specific_options"
+                     style="display: block; border: 0px; margin: 0px; padding: 0px;">
+                    <div class="export_sub_options" id="sql_general_opts">
+                        <ul>
+                            <li>
+                                <label for="select_sql_compatibility" class="desc">SQL 兼容模式：</label><select
+                                    name="sql_compatibility" id="select_sql_compatibility">
+                                <option value="NONE" selected="selected">NONE</option>
+                                <option value="ANSI">ANSI</option>
+                                <option value="DB2">DB2</option>
+                                <option value="MAXDB">MAXDB</option>
+                                <option value="MYSQL323">MYSQL323</option>
+                                <option value="MYSQL40">MYSQL40</option>
+                                <option value="MSSQL">MSSQL</option>
+                                <option value="ORACLE">ORACLE</option>
+                                <option value="TRADITIONAL">TRADITIONAL</option>
+                            </select></li>
+                            <li>
+                                <input type="checkbox" name="sql_no_auto_value_on_zero" value="something"
+                                       id="checkbox_sql_no_auto_value_on_zero" checked="checked"><label
+                                    for="checkbox_sql_no_auto_value_on_zero">不要给零值使用自增
+                                (<code>AUTO_INCREMENT</code>)</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="xml_options" class="format_specific_options"
+                     style="display: none; border: 0px; margin: 0px; padding: 0px;"><p>该格式没有选项</p></div>
+            </div>
+            <div class="clearfloat"></div>
+            <div class="importoptions" id="submit"><input type="submit" value="执行" id="buttonGo"></div>
+        </form>
+    </div>
+</div>

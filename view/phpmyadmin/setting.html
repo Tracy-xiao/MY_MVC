@@ -1,0 +1,152 @@
+<div id="page_content">
+    <ul class="user_prefs_tabs" id="topmenu2">
+
+        <li class="active">
+
+            <a href="prefs_manage.php?token=b7cde5c9cc528362361e168a36c84ae5" class="tabactive" rel="samepage">
+                管理我的设置 </a>
+        </li>
+
+        <li>
+
+            <a href="prefs_forms.php?form=Features&amp;token=b7cde5c9cc528362361e168a36c84ae5" class="tab"
+               rel="newpage">
+                <img src="<?=__PUBLIC__?>/phpmyadmin/dot.gif" title="功能" alt="功能" class="icon ic_b_tblops">&nbsp;功能 </a>
+        </li>
+
+        <li>
+
+            <a href="prefs_forms.php?form=Sql_queries&amp;token=b7cde5c9cc528362361e168a36c84ae5" class="tab"
+               rel="newpage">
+                <img src="<?=__PUBLIC__?>/phpmyadmin/dot.gif" title="SQL 查询" alt="SQL 查询" class="icon ic_b_sql">&nbsp;SQL 查询 </a>
+        </li>
+
+        <li>
+
+            <a href="prefs_forms.php?form=Navi_panel&amp;token=b7cde5c9cc528362361e168a36c84ae5" class="tab"
+               rel="newpage">
+                <img src="<?=__PUBLIC__?>/phpmyadmin/dot.gif" title="导航面板" alt="导航面板" class="icon ic_b_select">&nbsp;导航面板 </a>
+        </li>
+
+        <li>
+
+            <a href="prefs_forms.php?form=Main_panel&amp;token=b7cde5c9cc528362361e168a36c84ae5" class="tab"
+               rel="newpage">
+                <img src="<?=__PUBLIC__?>/phpmyadmin/dot.gif" title="主面板" alt="主面板" class="icon ic_b_props">&nbsp;主面板 </a>
+        </li>
+
+        <li>
+
+            <a href="prefs_forms.php?form=Import&amp;token=b7cde5c9cc528362361e168a36c84ae5" class="tab" rel="newpage">
+                <img src="<?=__PUBLIC__?>/phpmyadmin/dot.gif" title="导入" alt="导入" class="icon ic_b_import">&nbsp;导入 </a>
+        </li>
+
+        <li>
+
+            <a href="prefs_forms.php?form=Export&amp;token=b7cde5c9cc528362361e168a36c84ae5" class="tab" rel="newpage">
+                <img src="<?=__PUBLIC__?>/phpmyadmin/dot.gif" title="导出" alt="导出" class="icon ic_b_export">&nbsp;导出 </a>
+        </li>
+
+    </ul>
+    <div class="clearfloat"></div>
+    <div class="notice"><img src="<?=__PUBLIC__?>/phpmyadmin/dot.gif" title="" alt="" class="icon ic_s_notice"> 你的偏好将仅作用于本次会话。要想永久保存需要 <a
+            href="./doc/html/setup.html#linked-tables" target="documentation">phpMyAdmin 高级功能</a>。
+    </div>
+    <script type="text/javascript">
+        PMA_messages['strSavedOn'] = "保存于：@DATE@";
+    </script>
+    <div id="maincontainer">
+        <div id="main_pane_left">
+            <div class="group">
+                <h2>导入</h2>
+                <form class="group-cnt prefs-form disableAjax" name="prefs_import" action="prefs_manage.php"
+                      method="post" enctype="multipart/form-data"><input type="hidden" name="MAX_FILE_SIZE"
+                                                                         value="134217728"><input type="hidden"
+                                                                                                  name="token"
+                                                                                                  value="b7cde5c9cc528362361e168a36c84ae5"><input
+                        type="hidden" name="json" value=""><input type="radio" id="import_text_file" name="import_type"
+                                                                  value="text_file" checked="checked"><label
+                        for="import_text_file">从文件导入</label>
+                    <div id="opts_import_text_file" class="prefsmanage_opts"><label
+                            for="input_import_file">从计算机中上传：</label><input type="file" name="import_file"
+                                                                           id="input_import_file"></div>
+                    <input type="radio" id="import_local_storage" name="import_type" value="local_storage"><label
+                            for="import_local_storage">从浏览器存储中导入</label>
+                    <div id="opts_import_local_storage" class="prefsmanage_opts disabled">
+                        <div class="localStorage-supported">设置将从浏览器的本地存储中导入。<br>
+                            <div class="localStorage-exists" style="display: none;">保存于：@DATE@</div>
+                            <div class="localStorage-empty">
+                                <div class="notice"><img src="<?=__PUBLIC__?>/phpmyadmin/dot.gif" title="" alt="" class="icon ic_s_notice">
+                                    你没有已保存的设置！
+                                </div>
+                            </div>
+                        </div>
+                        <div class="localStorage-unsupported" style="display: none;">
+                            <div class="notice"><img src="<?=__PUBLIC__?>/phpmyadmin/dot.gif" title="" alt="" class="icon ic_s_notice">
+                                你所使用的浏览器不支持此功能
+                            </div>
+                        </div>
+                    </div>
+                    <input type="checkbox" id="import_merge" name="import_merge"><label
+                            for="import_merge">与当前设置合并</label><br><br><input type="submit" name="submit_import"
+                                                                             value="执行"></form>
+            </div>
+            <div class="group">
+                <h2>更多设置</h2>
+                <div class="group-cnt">
+                    你可以通过修改 config.inc.php 文件进行更多设置，如通过使用<a href="setup/index.php" target="_blank">安装脚本</a>。<a
+                        href="./doc/html/setup.html#setup-script" target="documentation"><img src="<?=__PUBLIC__?>/phpmyadmin/dot.gif"
+                                                                                              title="文档" alt="文档"
+                                                                                              class="icon ic_b_help"></a>
+                </div>
+            </div>
+        </div>
+        <div id="main_pane_right">
+            <div class="group">
+                <h2>导出</h2>
+                <div class="click-hide-message group-cnt" style="display:none">
+                    <div class="success"><img src="<?=__PUBLIC__?>/phpmyadmin/dot.gif" title="" alt="" class="icon ic_s_success"> 设置已保存。
+                    </div>
+                </div>
+                <form class="group-cnt prefs-form disableAjax" name="prefs_export" action="prefs_manage.php"
+                      method="post">
+                    <input type="hidden" name="token" value="b7cde5c9cc528362361e168a36c84ae5">
+                    <div style="padding-bottom:0.5em">
+                        <input type="radio" id="export_text_file" name="export_type" value="text_file"
+                               checked="checked">
+                        <label for="export_text_file">
+                            保存为文件 </label><br>
+                        <input type="radio" id="export_local_storage" name="export_type" value="local_storage">
+                        <label for="export_local_storage">
+                            保存到浏览器存储</label>
+                    </div>
+                    <div id="opts_export_local_storage" class="prefsmanage_opts disabled">
+                    <span class="localStorage-supported">
+                        设置将保存到浏览器的本地存储。                        <div class="localStorage-exists" style="display: none;">
+                            <b>
+                                现有设置将被覆盖！                            </b>
+                        </div>
+                    </span>
+                        <div class="localStorage-unsupported" style="display: none;">
+                            <div class="notice"><img src="<?=__PUBLIC__?>/phpmyadmin/dot.gif" title="" alt="" class="icon ic_s_notice">
+                                你所使用的浏览器不支持此功能
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <input type="submit" name="submit_export" value="执行"></form>
+            </div>
+            <div class="group">
+                <h2>重置</h2>
+                <form class="group-cnt prefs-form disableAjax" name="prefs_reset" action="prefs_manage.php"
+                      method="post">
+                    <input type="hidden" name="token" value="b7cde5c9cc528362361e168a36c84ae5">你可以重置并将所有设置恢复为默认值。
+                    <br><br>
+                    <input type="submit" name="submit_clear" value="重置">
+                </form>
+            </div>
+        </div>
+        <br class="clearfloat">
+    </div>
+
+</div>

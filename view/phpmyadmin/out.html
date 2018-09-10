@@ -1,0 +1,1943 @@
+<div id="page_content">
+    <div id="page_settings_modal">
+        <div class="page_settings">
+            <form method="post"
+                  action="db_export.php?db=1712a&amp;table=&amp;server=1&amp;target=&amp;token=e5f452e5d40d91ced8ec97ea4f6c20c3"
+                  class="config-form disableAjax"><input type="hidden" name="tab_hash" value=""><input type="hidden"
+                                                                                                       name="check_page_refresh"
+                                                                                                       id="check_page_refresh"
+                                                                                                       value="">
+                <input type="hidden" name="token" value="e5f452e5d40d91ced8ec97ea4f6c20c3">
+                <input type="hidden" name="submit_save" value="Export">
+                <ul class="tabs">
+
+                    <li class="active">
+
+                        <a href="#Export_defaults">
+                            导出选项 </a>
+                    </li>
+                    <li>
+
+                        <a href="#Sql">
+                            SQL </a>
+                    </li>
+                    <li>
+
+                        <a href="#CodeGen">
+                            CodeGen </a>
+                    </li>
+                    <li>
+
+                        <a href="#Csv">
+                            CSV </a>
+                    </li>
+                    <li>
+
+                        <a href="#Latex">
+                            LaTeX </a>
+                    </li>
+                    <li>
+
+                        <a href="#Microsoft_Office">
+                            微软 Office </a>
+                    </li>
+                    <li>
+
+                        <a href="#Open_Document">
+                            OpenDocument </a>
+                    </li>
+                    <li>
+
+                        <a href="#Texy">
+                            Texy! 文本 </a>
+                    </li>
+                </ul>
+                <br clear="right">
+                <div class="tabs_contents">
+                    <fieldset class="optbox" id="Export_defaults" style="display: block;">
+                        <legend>导出选项</legend>
+                        <p>自定义默认导出选项。</p>
+                        <table width="100%" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <th><label for="Export-method">导出方式</label></th>
+                                <td><select name="Export-method" id="Export-method">
+                                    <option value="quick" selected="selected">快速 - 仅显示必须的设置项</option>
+                                    <option value="custom">自定义 - 显示所有可用的设置项</option>
+                                    <option value="custom-no-form">自定义 - 同上，但不允许选择快速/自定义</option>
+                                </select><a class="restore-default" href="#Export-method" title="还原为默认值"
+                                            style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif"
+                                                                                               title="" alt=""
+                                                                                               class="icon ic_s_reload"
+                                                                                               style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-header group-header-1">
+                                <th colspan="2">快速</th>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-quick_export_onserver">保存在服务器上</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-quick_export_onserver"
+                                                                  id="Export-quick_export_onserver"></span><a
+                                        class="restore-default" href="#Export-quick_export_onserver" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-quick_export_onserver_overwrite">覆盖现有文件</label></th>
+                                <td><span class="checkbox"><input type="checkbox"
+                                                                  name="Export-quick_export_onserver_overwrite"
+                                                                  id="Export-quick_export_onserver_overwrite"></span><a
+                                        class="restore-default" href="#Export-quick_export_onserver_overwrite"
+                                        title="还原为默认值" style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-header group-header-1">
+                                <th colspan="2">自定义</th>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-format">格式</label></th>
+                                <td><select name="Export-format" id="Export-format">
+                                    <option value="codegen">codegen</option>
+                                    <option value="csv">csv</option>
+                                    <option value="excel">excel</option>
+                                    <option value="htmlexcel">htmlexcel</option>
+                                    <option value="htmlword">htmlword</option>
+                                    <option value="latex">latex</option>
+                                    <option value="ods">ods</option>
+                                    <option value="odt">odt</option>
+                                    <option value="pdf">pdf</option>
+                                    <option value="sql" selected="selected">sql</option>
+                                    <option value="texytext">texytext</option>
+                                    <option value="xls">xls</option>
+                                    <option value="xml">xml</option>
+                                    <option value="yaml">yaml</option>
+                                </select><a class="restore-default" href="#Export-format" title="还原为默认值"
+                                            style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif"
+                                                                                               title="" alt=""
+                                                                                               class="icon ic_s_reload"
+                                                                                               style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-compression">压缩</label></th>
+                                <td><select name="Export-compression" id="Export-compression">
+                                    <option value="none" selected="selected">none</option>
+                                    <option value="zip">zip</option>
+                                    <option value="gzip">gzip</option>
+                                </select><a class="restore-default" href="#Export-compression" title="还原为默认值"
+                                            style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif"
+                                                                                               title="" alt=""
+                                                                                               class="icon ic_s_reload"
+                                                                                               style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-charset">文件字符集</label></th>
+                                <td><select name="Export-charset" id="Export-charset">
+                                    <option value="" selected="selected"></option>
+                                    <option value="iso-8859-1">iso-8859-1</option>
+                                    <option value="iso-8859-2">iso-8859-2</option>
+                                    <option value="iso-8859-3">iso-8859-3</option>
+                                    <option value="iso-8859-4">iso-8859-4</option>
+                                    <option value="iso-8859-5">iso-8859-5</option>
+                                    <option value="iso-8859-6">iso-8859-6</option>
+                                    <option value="iso-8859-7">iso-8859-7</option>
+                                    <option value="iso-8859-8">iso-8859-8</option>
+                                    <option value="iso-8859-9">iso-8859-9</option>
+                                    <option value="iso-8859-10">iso-8859-10</option>
+                                    <option value="iso-8859-11">iso-8859-11</option>
+                                    <option value="iso-8859-12">iso-8859-12</option>
+                                    <option value="iso-8859-13">iso-8859-13</option>
+                                    <option value="iso-8859-14">iso-8859-14</option>
+                                    <option value="iso-8859-15">iso-8859-15</option>
+                                    <option value="windows-1250">windows-1250</option>
+                                    <option value="windows-1251">windows-1251</option>
+                                    <option value="windows-1252">windows-1252</option>
+                                    <option value="windows-1256">windows-1256</option>
+                                    <option value="windows-1257">windows-1257</option>
+                                    <option value="koi8-r">koi8-r</option>
+                                    <option value="big5">big5</option>
+                                    <option value="gb2312">gb2312</option>
+                                    <option value="utf-16">utf-16</option>
+                                    <option value="utf-8">utf-8</option>
+                                    <option value="utf-7">utf-7</option>
+                                    <option value="x-user-defined">x-user-defined</option>
+                                    <option value="euc-jp">euc-jp</option>
+                                    <option value="ks_c_5601-1987">ks_c_5601-1987</option>
+                                    <option value="tis-620">tis-620</option>
+                                    <option value="SHIFT_JIS">SHIFT_JIS</option>
+                                </select><a class="restore-default" href="#Export-charset" title="还原为默认值"
+                                            style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif"
+                                                                                               title="" alt=""
+                                                                                               class="icon ic_s_reload"
+                                                                                               style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-lock_tables">使用 <code>LOCK TABLES</code> 语句</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-lock_tables"
+                                                                  id="Export-lock_tables"></span><a
+                                        class="restore-default" href="#Export-lock_tables" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-as_separate_files">导出为单独的文件</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-as_separate_files"
+                                                                  id="Export-as_separate_files"></span><a
+                                        class="restore-default" href="#Export-as_separate_files" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-header-field group-header-2">
+                                <th><label for="Export-asfile">保存为文件</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-asfile"
+                                                                  id="Export-asfile" checked="checked"></span><a
+                                        class="restore-default" href="#Export-asfile" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-2">
+                                <th><label for="Export-onserver">保存在服务器上</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-onserver"
+                                                                  id="Export-onserver"></span><a class="restore-default"
+                                                                                                 href="#Export-onserver"
+                                                                                                 title="还原为默认值"
+                                                                                                 style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-2">
+                                <th><label for="Export-onserver_overwrite">覆盖现有文件</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-onserver_overwrite"
+                                                                  id="Export-onserver_overwrite"></span><a
+                                        class="restore-default" href="#Export-onserver_overwrite" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-file_template_table">表名称模板</label></th>
+                                <td><input type="text" size="40" name="Export-file_template_table"
+                                           id="Export-file_template_table" value="@TABLE@"><a class="restore-default"
+                                                                                              href="#Export-file_template_table"
+                                                                                              title="还原为默认值"
+                                                                                              style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-file_template_database">数据库名称模板</label></th>
+                                <td><input type="text" size="40" name="Export-file_template_database"
+                                           id="Export-file_template_database" value="@DATABASE@"><a
+                                        class="restore-default" href="#Export-file_template_database" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-file_template_server">服务器名称模板</label></th>
+                                <td><input type="text" size="40" name="Export-file_template_server"
+                                           id="Export-file_template_server" value="@SERVER@"><a class="restore-default"
+                                                                                                href="#Export-file_template_server"
+                                                                                                title="还原为默认值"
+                                                                                                style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                    <fieldset class="optbox" id="Sql" style="display: none;">
+                        <legend>SQL</legend>
+                        <p>自定义默认选项。</p>
+                        <table width="100%" cellspacing="0">
+                            <tbody>
+                            <tr class="group-header-field group-header-1">
+                                <th><label for="Export-sql_include_comments">注释</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_include_comments"
+                                                                  id="Export-sql_include_comments"
+                                                                  checked="checked"></span><a class="restore-default"
+                                                                                              href="#Export-sql_include_comments"
+                                                                                              title="还原为默认值"
+                                                                                              style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_dates">创建/更新/检查日期</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_dates"
+                                                                  id="Export-sql_dates"></span><a
+                                        class="restore-default" href="#Export-sql_dates" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_relation">关系</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_relation"
+                                                                  id="Export-sql_relation"></span><a
+                                        class="restore-default" href="#Export-sql_relation" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_mime">MIME 类型</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_mime"
+                                                                  id="Export-sql_mime"></span><a class="restore-default"
+                                                                                                 href="#Export-sql_mime"
+                                                                                                 title="还原为默认值"
+                                                                                                 style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr>
+                                <th><label for="Export-sql_use_transaction">使用事务执行导出</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_use_transaction"
+                                                                  id="Export-sql_use_transaction"></span><a
+                                        class="restore-default" href="#Export-sql_use_transaction" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="Export-sql_disable_fk">禁止外键约束</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_disable_fk"
+                                                                  id="Export-sql_disable_fk"></span><a
+                                        class="restore-default" href="#Export-sql_disable_fk" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="Export-sql_views_as_tables">将视图作为表导出</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_views_as_tables"
+                                                                  id="Export-sql_views_as_tables"></span><a
+                                        class="restore-default" href="#Export-sql_views_as_tables" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="Export-sql_metadata">从phpMyAdmin设置存储中导出相关元数据</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_metadata"
+                                                                  id="Export-sql_metadata"></span><a
+                                        class="restore-default" href="#Export-sql_metadata" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="Export-sql_compatibility">SQL 兼容模式</label></th>
+                                <td><select name="Export-sql_compatibility" id="Export-sql_compatibility">
+                                    <option value="NONE" selected="selected">NONE</option>
+                                    <option value="ANSI">ANSI</option>
+                                    <option value="DB2">DB2</option>
+                                    <option value="MAXDB">MAXDB</option>
+                                    <option value="MYSQL323">MYSQL323</option>
+                                    <option value="MYSQL40">MYSQL40</option>
+                                    <option value="MSSQL">MSSQL</option>
+                                    <option value="ORACLE">ORACLE</option>
+                                    <option value="TRADITIONAL">TRADITIONAL</option>
+                                </select><a class="restore-default" href="#Export-sql_compatibility" title="还原为默认值"
+                                            style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif"
+                                                                                               title="" alt=""
+                                                                                               class="icon ic_s_reload"
+                                                                                               style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="Export-sql_structure_or_data">转储表</label></th>
+                                <td><select name="Export-sql_structure_or_data" id="Export-sql_structure_or_data">
+                                    <option value="structure">结构</option>
+                                    <option value="data">数据</option>
+                                    <option value="structure_and_data" selected="selected">结构和数据</option>
+                                </select><a class="restore-default" href="#Export-sql_structure_or_data" title="还原为默认值"
+                                            style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif"
+                                                                                               title="" alt=""
+                                                                                               class="icon ic_s_reload"
+                                                                                               style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-header group-header-1">
+                                <th colspan="2">结构</th>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_drop_database">添加 DROP DATABASE</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_drop_database"
+                                                                  id="Export-sql_drop_database"></span><a
+                                        class="restore-default" href="#Export-sql_drop_database" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_create_database">添加 CREATE DATABASE / USE</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_create_database"
+                                                                  id="Export-sql_create_database"></span><a
+                                        class="restore-default" href="#Export-sql_create_database" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_drop_table">添加 DROP TABLE / VIEW / PROCEDURE / FUNCTION /
+                                    EVENT / TRIGGER</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_drop_table"
+                                                                  id="Export-sql_drop_table"></span><a
+                                        class="restore-default" href="#Export-sql_drop_table" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-header-field group-header-2">
+                                <th><label for="Export-sql_create_table">添加 CREATE TABLE</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_create_table"
+                                                                  id="Export-sql_create_table" checked="checked"></span><a
+                                        class="restore-default" href="#Export-sql_create_table" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-2">
+                                <th><label for="Export-sql_if_not_exists">添加IF NOT EXISTS语句（效率更低因为创建表时索引会自动生成）</label>
+                                </th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_if_not_exists"
+                                                                  id="Export-sql_if_not_exists"></span><a
+                                        class="restore-default" href="#Export-sql_if_not_exists" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-2">
+                                <th><label for="Export-sql_auto_increment">添加自增值</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_auto_increment"
+                                                                  id="Export-sql_auto_increment"
+                                                                  checked="checked"></span><a class="restore-default"
+                                                                                              href="#Export-sql_auto_increment"
+                                                                                              title="还原为默认值"
+                                                                                              style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_create_view">添加 CREATE VIEW</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_create_view"
+                                                                  id="Export-sql_create_view"
+                                                                  checked="checked"></span><a class="restore-default"
+                                                                                              href="#Export-sql_create_view"
+                                                                                              title="还原为默认值"
+                                                                                              style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_procedure_function">添加 CREATE PROCEDURE / FUNCTION /
+                                    EVENT</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_procedure_function"
+                                                                  id="Export-sql_procedure_function" checked="checked"></span><a
+                                        class="restore-default" href="#Export-sql_procedure_function" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_create_trigger">添加 CREATE TRIGGER</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_create_trigger"
+                                                                  id="Export-sql_create_trigger"
+                                                                  checked="checked"></span><a class="restore-default"
+                                                                                              href="#Export-sql_create_trigger"
+                                                                                              title="还原为默认值"
+                                                                                              style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_backquotes">给表名及字段名加上反引号</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_backquotes"
+                                                                  id="Export-sql_backquotes" checked="checked"></span><a
+                                        class="restore-default" href="#Export-sql_backquotes" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-header group-header-1">
+                                <th colspan="2">数据</th>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_delayed">使用延迟插入</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_delayed"
+                                                                  id="Export-sql_delayed"></span><a
+                                        class="restore-default" href="#Export-sql_delayed" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_ignore">使用忽略插入</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_ignore"
+                                                                  id="Export-sql_ignore"></span><a
+                                        class="restore-default" href="#Export-sql_ignore" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_type">导出类型</label></th>
+                                <td><select name="Export-sql_type" id="Export-sql_type">
+                                    <option value="INSERT" selected="selected">INSERT</option>
+                                    <option value="UPDATE">UPDATE</option>
+                                    <option value="REPLACE">REPLACE</option>
+                                </select><a class="restore-default" href="#Export-sql_type" title="还原为默认值"
+                                            style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif"
+                                                                                               title="" alt=""
+                                                                                               class="icon ic_s_reload"
+                                                                                               style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_insert_syntax">在插入数据时使用的语法</label></th>
+                                <td><select name="Export-sql_insert_syntax" id="Export-sql_insert_syntax">
+                                    <option value="complete">完整插入</option>
+                                    <option value="extended">扩展插入</option>
+                                    <option value="both" selected="selected">以上兼有</option>
+                                    <option value="none">以上均不</option>
+                                </select><a class="restore-default" href="#Export-sql_insert_syntax" title="还原为默认值"
+                                            style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif"
+                                                                                               title="" alt=""
+                                                                                               class="icon ic_s_reload"
+                                                                                               style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_max_query_size">查询语句的最大长度</label></th>
+                                <td><input type="number" name="Export-sql_max_query_size" id="Export-sql_max_query_size"
+                                           value="50000"><a class="restore-default" href="#Export-sql_max_query_size"
+                                                            title="还原为默认值"
+                                                            style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_hex_for_binary">使用十六进制表示 BINARY 和 BLOB 数据</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_hex_for_binary"
+                                                                  id="Export-sql_hex_for_binary"
+                                                                  checked="checked"></span><a class="restore-default"
+                                                                                              href="#Export-sql_hex_for_binary"
+                                                                                              title="还原为默认值"
+                                                                                              style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-sql_utc_time">导出时间为协调世界时</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-sql_utc_time"
+                                                                  id="Export-sql_utc_time" checked="checked"></span><a
+                                        class="restore-default" href="#Export-sql_utc_time" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                    <fieldset class="optbox" id="CodeGen" style="display: none;">
+                        <legend>CodeGen</legend>
+                        <p>自定义默认选项。</p>
+                        <table width="100%" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <th><label for="Export-codegen_format">格式</label></th>
+                                <td><select name="Export-codegen_format" id="Export-codegen_format">
+                                    <option value="0" selected="selected">NHibernate C# DO</option>
+                                    <option value="1">NHibernate XML</option>
+                                </select><a class="restore-default" href="#Export-codegen_format" title="还原为默认值"
+                                            style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif"
+                                                                                               title="" alt=""
+                                                                                               class="icon ic_s_reload"
+                                                                                               style="display: none;"></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                    <fieldset class="optbox" id="Csv" style="display: none;">
+                        <legend>CSV</legend>
+                        <p>自定义默认选项。</p>
+                        <table width="100%" cellspacing="0">
+                            <tbody>
+                            <tr class="group-header group-header-1">
+                                <th colspan="2">CSV</th>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-csv_separator">字段分隔符</label></th>
+                                <td><input type="text" size="25" name="Export-csv_separator" id="Export-csv_separator"
+                                           value=","><a class="restore-default" href="#Export-csv_separator"
+                                                        title="还原为默认值"
+                                                        style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-csv_enclosed">内容分隔符</label></th>
+                                <td><input type="text" size="25" name="Export-csv_enclosed" id="Export-csv_enclosed"
+                                           value="&quot;"><a class="restore-default" href="#Export-csv_enclosed"
+                                                             title="还原为默认值"
+                                                             style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-csv_escaped">内容转义符</label></th>
+                                <td><input type="text" size="25" name="Export-csv_escaped" id="Export-csv_escaped"
+                                           value="&quot;"><a class="restore-default" href="#Export-csv_escaped"
+                                                             title="还原为默认值"
+                                                             style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-csv_terminated">换行符</label></th>
+                                <td><input type="text" size="25" name="Export-csv_terminated" id="Export-csv_terminated"
+                                           value="AUTO"><a class="restore-default" href="#Export-csv_terminated"
+                                                           title="还原为默认值" style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-csv_null">将 NULL 替换为</label></th>
+                                <td><input type="text" size="25" name="Export-csv_null" id="Export-csv_null"
+                                           value="NULL"><a class="restore-default" href="#Export-csv_null"
+                                                           title="还原为默认值" style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-csv_removeCRLF">删除内容中的回车换行符</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-csv_removeCRLF"
+                                                                  id="Export-csv_removeCRLF"></span><a
+                                        class="restore-default" href="#Export-csv_removeCRLF" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-csv_columns">首行保存字段名</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-csv_columns"
+                                                                  id="Export-csv_columns"></span><a
+                                        class="restore-default" href="#Export-csv_columns" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-header group-header-1">
+                                <th colspan="2">MS Excel 的 CSV 格式</th>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-excel_null">将 NULL 替换为</label></th>
+                                <td><input type="text" size="25" name="Export-excel_null" id="Export-excel_null"
+                                           value="NULL"><a class="restore-default" href="#Export-excel_null"
+                                                           title="还原为默认值" style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-excel_removeCRLF">删除内容中的回车换行符</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-excel_removeCRLF"
+                                                                  id="Export-excel_removeCRLF"></span><a
+                                        class="restore-default" href="#Export-excel_removeCRLF" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-excel_columns">首行保存字段名</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-excel_columns"
+                                                                  id="Export-excel_columns"></span><a
+                                        class="restore-default" href="#Export-excel_columns" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-excel_edition">Excel 版本</label></th>
+                                <td><select name="Export-excel_edition" id="Export-excel_edition">
+                                    <option value="win" selected="selected">Windows</option>
+                                    <option value="mac_excel2003">Excel 2003 / Macintosh</option>
+                                    <option value="mac_excel2008">Excel 2008 / Macintosh</option>
+                                </select><a class="restore-default" href="#Export-excel_edition" title="还原为默认值"
+                                            style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif"
+                                                                                               title="" alt=""
+                                                                                               class="icon ic_s_reload"
+                                                                                               style="display: none;"></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                    <fieldset class="optbox" id="Latex" style="display: none;">
+                        <legend>LaTeX</legend>
+                        <p>自定义默认选项。</p>
+                        <table width="100%" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <th><label for="Export-latex_caption">包含表说明</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-latex_caption"
+                                                                  id="Export-latex_caption" checked="checked"></span><a
+                                        class="restore-default" href="#Export-latex_caption" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="Export-latex_structure_or_data">转储表</label></th>
+                                <td><input type="text" size="40" name="Export-latex_structure_or_data"
+                                           id="Export-latex_structure_or_data" value="structure_and_data"><a
+                                        class="restore-default" href="#Export-latex_structure_or_data" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-header group-header-1">
+                                <th colspan="2">结构</th>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-latex_structure_caption">表说明</label></th>
+                                <td><input type="text" size="40" name="Export-latex_structure_caption"
+                                           id="Export-latex_structure_caption" value="strLatexStructure"><a
+                                        class="restore-default" href="#Export-latex_structure_caption" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-latex_structure_continued_caption">表说明续</label></th>
+                                <td><input type="text" size="40" name="Export-latex_structure_continued_caption"
+                                           id="Export-latex_structure_continued_caption"
+                                           value="strLatexStructure strLatexContinued"><a class="restore-default"
+                                                                                          href="#Export-latex_structure_continued_caption"
+                                                                                          title="还原为默认值"
+                                                                                          style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-latex_structure_label">标签</label></th>
+                                <td><input type="text" size="40" name="Export-latex_structure_label"
+                                           id="Export-latex_structure_label" value="tab:@TABLE@-structure"><a
+                                        class="restore-default" href="#Export-latex_structure_label" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-latex_relation">关系</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-latex_relation"
+                                                                  id="Export-latex_relation" checked="checked"></span><a
+                                        class="restore-default" href="#Export-latex_relation" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-latex_comments">注释</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-latex_comments"
+                                                                  id="Export-latex_comments" checked="checked"></span><a
+                                        class="restore-default" href="#Export-latex_comments" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-latex_mime">MIME 类型</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-latex_mime"
+                                                                  id="Export-latex_mime" checked="checked"></span><a
+                                        class="restore-default" href="#Export-latex_mime" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-header group-header-1">
+                                <th colspan="2">数据</th>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-latex_columns">首行保存字段名</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-latex_columns"
+                                                                  id="Export-latex_columns" checked="checked"></span><a
+                                        class="restore-default" href="#Export-latex_columns" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-latex_data_caption">表说明</label></th>
+                                <td><input type="text" size="40" name="Export-latex_data_caption"
+                                           id="Export-latex_data_caption" value="strLatexContent"><a
+                                        class="restore-default" href="#Export-latex_data_caption" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-latex_data_continued_caption">表说明续</label></th>
+                                <td><input type="text" size="40" name="Export-latex_data_continued_caption"
+                                           id="Export-latex_data_continued_caption"
+                                           value="strLatexContent strLatexContinued"><a class="restore-default"
+                                                                                        href="#Export-latex_data_continued_caption"
+                                                                                        title="还原为默认值"
+                                                                                        style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-latex_data_label">标签</label></th>
+                                <td><input type="text" size="40" name="Export-latex_data_label"
+                                           id="Export-latex_data_label" value="tab:@TABLE@-data"><a
+                                        class="restore-default" href="#Export-latex_data_label" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-latex_null">将 NULL 替换为</label></th>
+                                <td><input type="text" size="40" name="Export-latex_null" id="Export-latex_null"
+                                           value="\textit{NULL}"><a class="restore-default" href="#Export-latex_null"
+                                                                    title="还原为默认值"
+                                                                    style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                    <fieldset class="optbox" id="Microsoft_Office" style="display: none;">
+                        <legend>微软 Office</legend>
+                        <p>自定义默认选项。</p>
+                        <table width="100%" cellspacing="0">
+                            <tbody>
+                            <tr class="group-header group-header-1">
+                                <th colspan="2">微软 Word 2000</th>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-htmlword_structure_or_data">转储表</label></th>
+                                <td><select name="Export-htmlword_structure_or_data"
+                                            id="Export-htmlword_structure_or_data">
+                                    <option value="structure">结构</option>
+                                    <option value="data">数据</option>
+                                    <option value="structure_and_data" selected="selected">结构和数据</option>
+                                </select><a class="restore-default" href="#Export-htmlword_structure_or_data"
+                                            title="还原为默认值" style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-htmlword_null">将 NULL 替换为</label></th>
+                                <td><input type="text" size="25" name="Export-htmlword_null" id="Export-htmlword_null"
+                                           value="NULL"><a class="restore-default" href="#Export-htmlword_null"
+                                                           title="还原为默认值" style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-htmlword_columns">首行保存字段名</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-htmlword_columns"
+                                                                  id="Export-htmlword_columns"></span><a
+                                        class="restore-default" href="#Export-htmlword_columns" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                    <fieldset class="optbox" id="Open_Document" style="display: none;">
+                        <legend>OpenDocument</legend>
+                        <p>自定义默认选项。</p>
+                        <table width="100%" cellspacing="0">
+                            <tbody>
+                            <tr class="group-header group-header-1">
+                                <th colspan="2">OpenDocument Spreadsheet</th>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-ods_columns">首行保存字段名</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-ods_columns"
+                                                                  id="Export-ods_columns"></span><a
+                                        class="restore-default" href="#Export-ods_columns" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-ods_null">将 NULL 替换为</label></th>
+                                <td><input type="text" size="25" name="Export-ods_null" id="Export-ods_null"
+                                           value="NULL"><a class="restore-default" href="#Export-ods_null"
+                                                           title="还原为默认值" style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-header group-header-1">
+                                <th colspan="2">OpenOffice 文档</th>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-odt_structure_or_data">转储表</label></th>
+                                <td><select name="Export-odt_structure_or_data" id="Export-odt_structure_or_data">
+                                    <option value="structure">结构</option>
+                                    <option value="data">数据</option>
+                                    <option value="structure_and_data" selected="selected">结构和数据</option>
+                                </select><a class="restore-default" href="#Export-odt_structure_or_data" title="还原为默认值"
+                                            style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif"
+                                                                                               title="" alt=""
+                                                                                               class="icon ic_s_reload"
+                                                                                               style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-header group-header-2">
+                                <th colspan="2">结构</th>
+                            </tr>
+                            <tr class="group-field group-field-2">
+                                <th><label for="Export-odt_relation">关系</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-odt_relation"
+                                                                  id="Export-odt_relation" checked="checked"></span><a
+                                        class="restore-default" href="#Export-odt_relation" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-2">
+                                <th><label for="Export-odt_comments">注释</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-odt_comments"
+                                                                  id="Export-odt_comments" checked="checked"></span><a
+                                        class="restore-default" href="#Export-odt_comments" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-2">
+                                <th><label for="Export-odt_mime">MIME 类型</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-odt_mime"
+                                                                  id="Export-odt_mime" checked="checked"></span><a
+                                        class="restore-default" href="#Export-odt_mime" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-header group-header-2">
+                                <th colspan="2">数据</th>
+                            </tr>
+                            <tr class="group-field group-field-2">
+                                <th><label for="Export-odt_columns">首行保存字段名</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-odt_columns"
+                                                                  id="Export-odt_columns" checked="checked"></span><a
+                                        class="restore-default" href="#Export-odt_columns" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            <tr class="group-field group-field-2">
+                                <th><label for="Export-odt_null">将 NULL 替换为</label></th>
+                                <td><input type="text" size="25" name="Export-odt_null" id="Export-odt_null"
+                                           value="NULL"><a class="restore-default" href="#Export-odt_null"
+                                                           title="还原为默认值" style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                    <fieldset class="optbox" id="Texy" style="display: none;">
+                        <legend>Texy! 文本</legend>
+                        <p>自定义默认选项</p>
+                        <table width="100%" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <th><label for="Export-texytext_structure_or_data">转储表</label></th>
+                                <td><select name="Export-texytext_structure_or_data"
+                                            id="Export-texytext_structure_or_data">
+                                    <option value="structure">结构</option>
+                                    <option value="data">数据</option>
+                                    <option value="structure_and_data" selected="selected">结构和数据</option>
+                                </select><a class="restore-default" href="#Export-texytext_structure_or_data"
+                                            title="还原为默认值" style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-header group-header-1">
+                                <th colspan="2">数据</th>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-texytext_null">将 NULL 替换为</label></th>
+                                <td><input type="text" size="25" name="Export-texytext_null" id="Export-texytext_null"
+                                           value="NULL"><a class="restore-default" href="#Export-texytext_null"
+                                                           title="还原为默认值" style="display: inline-block; opacity: 0.25;"><img
+                                        src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"
+                                        style="display: none;"></a></td>
+                            </tr>
+                            <tr class="group-field group-field-1">
+                                <th><label for="Export-texytext_columns">首行保存字段名</label></th>
+                                <td><span class="checkbox"><input type="checkbox" name="Export-texytext_columns"
+                                                                  id="Export-texytext_columns"></span><a
+                                        class="restore-default" href="#Export-texytext_columns" title="还原为默认值"
+                                        style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title=""
+                                                                                           alt=""
+                                                                                           class="icon ic_s_reload"
+                                                                                           style="display: none;"></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                </div>
+            </form>
+            <script type="text/javascript">
+                if (typeof configInlineParams === "undefined" || !Array.isArray(configInlineParams)) configInlineParams = [];
+                configInlineParams.push(function () {
+                    validateField('Export-sql_max_query_size', 'PMA_validatePositiveNumber', true);
+                    $.extend(PMA_messages, {
+                        'error_nan_p': '请输入正数！',
+                        'error_nan_nneg': '请输入非负数！',
+                        'error_incorrect_port': '请输入有效的端口号！',
+                        'error_invalid_value': '值错误！',
+                        'error_value_lte': '值应小于或等于 %s！'
+                    });
+                    $.extend(defaultValues, {
+                        'Export-method': ['quick'],
+                        'Export-quick_export_onserver': false,
+                        'Export-quick_export_onserver_overwrite': false,
+                        'Export-format': ['sql'],
+                        'Export-compression': ['none'],
+                        'Export-charset': [''],
+                        'Export-lock_tables': false,
+                        'Export-as_separate_files': false,
+                        'Export-asfile': true,
+                        'Export-onserver': false,
+                        'Export-onserver_overwrite': false,
+                        'Export-file_template_table': '@TABLE@',
+                        'Export-file_template_database': '@DATABASE@',
+                        'Export-file_template_server': '@SERVER@',
+                        'Export-sql_include_comments': true,
+                        'Export-sql_dates': false,
+                        'Export-sql_relation': false,
+                        'Export-sql_mime': false,
+                        'Export-sql_use_transaction': false,
+                        'Export-sql_disable_fk': false,
+                        'Export-sql_views_as_tables': false,
+                        'Export-sql_metadata': false,
+                        'Export-sql_compatibility': ['NONE'],
+                        'Export-sql_structure_or_data': ['structure_and_data'],
+                        'Export-sql_drop_database': false,
+                        'Export-sql_create_database': false,
+                        'Export-sql_drop_table': false,
+                        'Export-sql_create_table': true,
+                        'Export-sql_if_not_exists': false,
+                        'Export-sql_auto_increment': true,
+                        'Export-sql_create_view': true,
+                        'Export-sql_procedure_function': true,
+                        'Export-sql_create_trigger': true,
+                        'Export-sql_backquotes': true,
+                        'Export-sql_delayed': false,
+                        'Export-sql_ignore': false,
+                        'Export-sql_type': ['INSERT'],
+                        'Export-sql_insert_syntax': ['both'],
+                        'Export-sql_max_query_size': '50000',
+                        'Export-sql_hex_for_binary': true,
+                        'Export-sql_utc_time': true,
+                        'Export-codegen_format': ['0'],
+                        'Export-csv_separator': ',',
+                        'Export-csv_enclosed': '\"',
+                        'Export-csv_escaped': '\"',
+                        'Export-csv_terminated': 'AUTO',
+                        'Export-csv_null': 'NULL',
+                        'Export-csv_removeCRLF': false,
+                        'Export-csv_columns': false,
+                        'Export-excel_null': 'NULL',
+                        'Export-excel_removeCRLF': false,
+                        'Export-excel_columns': false,
+                        'Export-excel_edition': ['win'],
+                        'Export-latex_caption': true,
+                        'Export-latex_structure_or_data': 'structure_and_data',
+                        'Export-latex_structure_caption': 'strLatexStructure',
+                        'Export-latex_structure_continued_caption': 'strLatexStructure strLatexContinued',
+                        'Export-latex_structure_label': 'tab:@TABLE@-structure',
+                        'Export-latex_relation': true,
+                        'Export-latex_comments': true,
+                        'Export-latex_mime': true,
+                        'Export-latex_columns': true,
+                        'Export-latex_data_caption': 'strLatexContent',
+                        'Export-latex_data_continued_caption': 'strLatexContent strLatexContinued',
+                        'Export-latex_data_label': 'tab:@TABLE@-data',
+                        'Export-latex_null': '\\textit{NULL}',
+                        'Export-htmlword_structure_or_data': ['structure_and_data'],
+                        'Export-htmlword_null': 'NULL',
+                        'Export-htmlword_columns': false,
+                        'Export-ods_columns': false,
+                        'Export-ods_null': 'NULL',
+                        'Export-odt_structure_or_data': ['structure_and_data'],
+                        'Export-odt_relation': true,
+                        'Export-odt_comments': true,
+                        'Export-odt_mime': true,
+                        'Export-odt_columns': true,
+                        'Export-odt_null': 'NULL',
+                        'Export-texytext_structure_or_data': ['structure_and_data'],
+                        'Export-texytext_null': 'NULL',
+                        'Export-texytext_columns': false
+                    });
+                });
+                if (typeof configScriptLoaded !== "undefined" && configInlineParams) loadInlineConfig();
+            </script>
+        </div>
+    </div>
+    <div class="exportoptions" id="header"><h2><img src="themes/dot.gif" title="导出" alt="导出" class="icon ic_b_export">正在导出数据库“1712a”中的数据表
+    </h2></div>
+    <form method="post" action="export.php" name="dump" class="disableAjax"><input type="hidden" name="db"
+                                                                                   value="1712a"><input type="hidden"
+                                                                                                        name="token"
+                                                                                                        value="e5f452e5d40d91ced8ec97ea4f6c20c3"><input
+            type="hidden" name="export_type" value="database">
+        <input type="hidden" name="export_method" value="quick"><input type="hidden" name="template_id" value="">
+        <div class="exportoptions" id="quick_or_custom"><h3>导出方式：</h3>
+            <ul>
+                <li><input type="radio" name="quick_or_custom" value="quick" id="radio_quick_export"
+                           checked="checked"><label for="radio_quick_export">快速 - 显示最少的选项</label></li>
+                <li><input type="radio" name="quick_or_custom" value="custom" id="radio_custom_export"><label
+                        for="radio_custom_export">自定义 - 显示所有可用的选项</label></li>
+            </ul>
+        </div>
+        <div class="exportoptions" id="format"><h3>格式：</h3><select id="plugins" name="what">
+            <option value="codegen">CodeGen</option>
+            <option value="csv">CSV</option>
+            <option value="excel">CSV for MS Excel</option>
+            <option value="htmlword">Microsoft Word 2000</option>
+            <option value="json">JSON</option>
+            <option value="latex">LaTeX</option>
+            <option value="mediawiki">MediaWiki Table</option>
+            <option value="ods">OpenDocument Spreadsheet</option>
+            <option value="odt">OpenDocument Text</option>
+            <option value="pdf">PDF</option>
+            <option value="phparray">PHP array</option>
+            <option selected="selected" value="sql">SQL</option>
+            <option value="texytext">Texy! text</option>
+            <option value="xml">XML</option>
+            <option value="yaml">YAML</option>
+        </select>
+            <input type="hidden" id="force_file_codegen" value="false">
+            <input type="hidden" id="force_file_csv" value="false">
+            <input type="hidden" id="force_file_excel" value="false">
+            <input type="hidden" id="force_file_htmlword" value="true">
+            <input type="hidden" id="force_file_json" value="false">
+            <input type="hidden" id="force_file_latex" value="false">
+            <input type="hidden" id="force_file_mediawiki" value="false">
+            <input type="hidden" id="force_file_ods" value="true">
+            <input type="hidden" id="force_file_odt" value="true">
+            <input type="hidden" id="force_file_pdf" value="true">
+            <input type="hidden" id="force_file_phparray" value="false">
+            <input type="hidden" id="force_file_sql" value="false">
+            <input type="hidden" id="force_file_texytext" value="false">
+            <input type="hidden" id="force_file_xml" value="false">
+            <input type="hidden" id="force_file_yaml" value="true">
+        </div>
+        <div class="exportoptions" id="databases_and_tables" style="display: none;"><h3>数据表：</h3>
+            <div class="export_table_list_container"><input type="hidden" name="structure_or_data_forced" value="0">
+                <table class="export_table_select">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>表</th>
+                        <th class="export_structure" style="opacity: 1;">结构</th>
+                        <th class="export_data" style="opacity: 1;">数据</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="export_table_name all">全选</td>
+                        <td class="export_structure all" style="opacity: 1;"><input type="checkbox"
+                                                                                    id="table_structure_all"></td>
+                        <td class="export_data all" style="opacity: 1;"><input type="checkbox" id="table_data_all"></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="table_select[]" value="a" checked="checked"></td>
+                        <td class="export_table_name">a</td>
+                        <td class="export_structure" style="opacity: 1;"><input type="checkbox" name="table_structure[]"
+                                                                                value="a" checked="checked"></td>
+                        <td class="export_data" style="opacity: 1;"><input type="checkbox" name="table_data[]" value="a"
+                                                                           checked="checked"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="table_select[]" value="b" checked="checked"></td>
+                        <td class="export_table_name">b</td>
+                        <td class="export_structure" style="opacity: 1;"><input type="checkbox" name="table_structure[]"
+                                                                                value="b" checked="checked"></td>
+                        <td class="export_data" style="opacity: 1;"><input type="checkbox" name="table_data[]" value="b"
+                                                                           checked="checked"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="alias_modal" class="hide" title="重命名导出的数据库/表/列"><label class="col-2">选择数据库: </label><select
+                id="db_alias_select">
+            <option value="b6c955f92308">1712a</option>
+        </select><label class="col-2" for="b6c955f92308">新数据库名: </label><input type="text" name="aliases[1712a][alias]"
+                                                                               placeholder="1712a alias" class=""
+                                                                               id="b6c955f92308" value=""
+                                                                               disabled="disabled">
+            <hr>
+            <label class="col-2">选择表: </label><span id="b6c955f92308_tables" class=""><select
+                    id="b6c955f92308_tables_select" class="table_alias_select"><option value="c5b3d0ba3226">a</option><option
+                    value="fb04cc6117b4">b</option></select><label class="col-2"
+                                                                   for="c5b3d0ba3226">新数据表名称: </label><input type="text"
+                                                                                                             value=""
+                                                                                                             name="aliases[1712a][tables][a][alias]"
+                                                                                                             id="c5b3d0ba3226"
+                                                                                                             placeholder="a alias"
+                                                                                                             class=""
+                                                                                                             disabled="disabled"><input
+                    type="text" value="" name="aliases[1712a][tables][b][alias]" id="fb04cc6117b4" placeholder="b alias"
+                    class="hide" disabled="disabled"><hr><table id="c5b3d0ba3226_cols" class="" width="100%"><thead><tr><th>原字段名</th><th>新字段名</th></tr></thead><tbody><tr
+                    class="odd"><th><label for="8b1f9d735b14">id</label></th><td><dummy_inp type="text"
+                                                                                            name="aliases[1712a][tables][a][columns][id]"
+                                                                                            id="8b1f9d735b14"
+                                                                                            placeholder="id alias"
+                                                                                            value=""></dummy_inp></td></tr><tr
+                    class="even"><th><label for="5e8cca6060a7">name</label></th><td><dummy_inp type="text"
+                                                                                               name="aliases[1712a][tables][a][columns][name]"
+                                                                                               id="5e8cca6060a7"
+                                                                                               placeholder="name alias"
+                                                                                               value=""></dummy_inp></td></tr></tbody></table><table
+                    id="fb04cc6117b4_cols" class="hide" width="100%"><thead><tr><th>原字段名</th><th>新字段名</th></tr></thead><tbody><tr
+                    class="odd"><th><label for="f2fd36a0ef04">id</label></th><td><dummy_inp type="text"
+                                                                                            name="aliases[1712a][tables][b][columns][id]"
+                                                                                            id="f2fd36a0ef04"
+                                                                                            placeholder="id alias"
+                                                                                            value=""></dummy_inp></td></tr><tr
+                    class="even"><th><label for="4b7c36773670">a_id</label></th><td><dummy_inp type="text"
+                                                                                               name="aliases[1712a][tables][b][columns][a_id]"
+                                                                                               id="4b7c36773670"
+                                                                                               placeholder="a_id alias"
+                                                                                               value=""></dummy_inp></td></tr><tr
+                    class="odd"><th><label for="9351aadbfe98">score</label></th><td><dummy_inp type="text"
+                                                                                               name="aliases[1712a][tables][b][columns][score]"
+                                                                                               id="9351aadbfe98"
+                                                                                               placeholder="score alias"
+                                                                                               value=""></dummy_inp></td></tr></tbody></table></span>
+        </div>
+        <div class="exportoptions" id="output" style="display: none;"><h3>输出：</h3>
+            <ul id="ul_output">
+                <li><input type="checkbox" id="btn_alias_config"><label for="btn_alias_config">重命名导出的数据库/表/列</label>
+                </li>
+                <li><input type="checkbox" name="lock_tables" value="something" id="checkbox_lock_tables"><label
+                        for="checkbox_lock_tables">使用 <code>LOCK TABLES</code> 语句</label></li>
+                <li><input type="radio" name="output_format" value="sendit" id="radio_dump_asfile"
+                           checked="checked"><label for="radio_dump_asfile">保存为文件</label>
+                    <ul id="ul_save_asfile">
+                        <li style="opacity: 1;"><label for="filename_template" class="desc">文件名模板：<span
+                                class="pma_hint"><img src="themes/dot.gif" title="" alt="" class="icon ic_b_help"><span
+                                class="hide">这个值是使用 <a
+                                href="./url.php?url=https%3A%2F%2Fphp.net%2Fmanual%2Fen%2Ffunction.strftime.php"
+                                target="documentation" title="文档">strftime</a> 来解析的，所以你能用时间格式的字符串。另外，下列内容也将被转换： @SERVER@ 将变成服务器名称 ，@DATABASE@ 将变成数据库名。其他文本将保持原样。参见<a
+                                href="./doc/html/faq.html#faq6-27" target="documentation">常见问题 (FAQ)</a>。</span></span></label><input
+                                type="text" name="filename_template" id="filename_template" value="@DATABASE@"><input
+                                type="checkbox" name="remember_template" id="checkbox_remember_template"
+                                checked="checked"><label for="checkbox_remember_template">以后也使用此设置</label></li>
+                        <li style="opacity: 1;"><label for="select_charset" class="desc">文件的字符集：</label>
+                            <select id="select_charset" name="charset" size="1">
+                                <option value="iso-8859-1">iso-8859-1</option>
+                                <option value="iso-8859-2">iso-8859-2</option>
+                                <option value="iso-8859-3">iso-8859-3</option>
+                                <option value="iso-8859-4">iso-8859-4</option>
+                                <option value="iso-8859-5">iso-8859-5</option>
+                                <option value="iso-8859-6">iso-8859-6</option>
+                                <option value="iso-8859-7">iso-8859-7</option>
+                                <option value="iso-8859-8">iso-8859-8</option>
+                                <option value="iso-8859-9">iso-8859-9</option>
+                                <option value="iso-8859-10">iso-8859-10</option>
+                                <option value="iso-8859-11">iso-8859-11</option>
+                                <option value="iso-8859-12">iso-8859-12</option>
+                                <option value="iso-8859-13">iso-8859-13</option>
+                                <option value="iso-8859-14">iso-8859-14</option>
+                                <option value="iso-8859-15">iso-8859-15</option>
+                                <option value="windows-1250">windows-1250</option>
+                                <option value="windows-1251">windows-1251</option>
+                                <option value="windows-1252">windows-1252</option>
+                                <option value="windows-1256">windows-1256</option>
+                                <option value="windows-1257">windows-1257</option>
+                                <option value="koi8-r">koi8-r</option>
+                                <option value="big5">big5</option>
+                                <option value="gb2312">gb2312</option>
+                                <option value="utf-16">utf-16</option>
+                                <option value="utf-8" selected="selected">utf-8</option>
+                                <option value="utf-7">utf-7</option>
+                                <option value="x-user-defined">x-user-defined</option>
+                                <option value="euc-jp">euc-jp</option>
+                                <option value="ks_c_5601-1987">ks_c_5601-1987</option>
+                                <option value="tis-620">tis-620</option>
+                                <option value="SHIFT_JIS">SHIFT_JIS</option>
+                            </select></li>
+                        <li style="opacity: 1;"><label for="compression" class="desc">压缩：</label><select
+                                id="compression" name="compression">
+                            <option value="none">无</option>
+                            <option value="zip">zip 压缩</option>
+                            <option value="gzip">gzip 压缩</option>
+                        </select></li>
+                        <li style="opacity: 1;"><input type="checkbox" id="checkbox_as_separate_files"
+                                                       name="as_separate_files" value="database"><label
+                                for="checkbox_as_separate_files">将每个表导出为独立的文件</label></li>
+                    </ul>
+                </li>
+                <li><input type="radio" id="radio_view_as_text" name="output_format" value="astext"><label
+                        for="radio_view_as_text">直接显示为文本</label></li>
+            </ul>
+            <label for="maxsize">跳过数据表，当大于</label><input type="text" id="maxsize" name="maxsize" size="4">MB
+        </div>
+        <div class="exportoptions" id="format_specific_opts" style="display: none;"><h3>格式特定选项：</h3>
+            <p class="no_js_msg" id="scroll_to_options_msg" style="display: none;">请下拉至所选格式并设置选项，其它格式请忽略。</p>
+            <div id="codegen_options" class="format_specific_options"
+                 style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                <div class="export_sub_options" id="codegen_general_opts">
+                    <ul>
+                        <li><input type="hidden" name="codegen_structure_or_data" value="data"></li>
+                        <li>
+                            <label for="select_codegen_format" class="desc">格式：</label><select name="codegen_format"
+                                                                                               id="select_codegen_format">
+                            <option value="0" selected="selected">NHibernate C# DO</option>
+                            <option value="1">NHibernate XML</option>
+                        </select></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="csv_options" class="format_specific_options"
+                 style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                <div class="export_sub_options" id="csv_general_opts">
+                    <ul>
+                        <li>
+                            <label for="text_csv_separator" class="desc">字段分隔符：</label><input type="text"
+                                                                                              name="csv_separator"
+                                                                                              value=","
+                                                                                              id="text_csv_separator">
+                        </li>
+                        <li>
+                            <label for="text_csv_enclosed" class="desc">内容分隔符：</label><input type="text"
+                                                                                             name="csv_enclosed"
+                                                                                             value="&quot;"
+                                                                                             id="text_csv_enclosed">
+                        </li>
+                        <li>
+                            <label for="text_csv_escaped" class="desc">内容转义符：</label><input type="text"
+                                                                                            name="csv_escaped"
+                                                                                            value="&quot;"
+                                                                                            id="text_csv_escaped"></li>
+                        <li>
+                            <label for="text_csv_terminated" class="desc">换行符：</label><input type="text"
+                                                                                             name="csv_terminated"
+                                                                                             value="AUTO"
+                                                                                             id="text_csv_terminated">
+                        </li>
+                        <li>
+                            <label for="text_csv_null" class="desc">将 NULL 替换为：</label><input type="text"
+                                                                                              name="csv_null"
+                                                                                              value="NULL"
+                                                                                              id="text_csv_null"></li>
+                        <li>
+                            <input type="checkbox" name="csv_removeCRLF" value="something" id="checkbox_csv_removeCRLF"><label
+                                for="checkbox_csv_removeCRLF">删除字段中的回车换行符</label></li>
+                        <li>
+                            <input type="checkbox" name="csv_columns" value="something" id="checkbox_csv_columns"><label
+                                for="checkbox_csv_columns">首行保存字段名</label></li>
+                        <li><input type="hidden" name="csv_structure_or_data" value="data"></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="excel_options" class="format_specific_options"
+                 style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                <div class="export_sub_options" id="excel_general_opts">
+                    <ul>
+                        <li>
+                            <label for="text_excel_null" class="desc">将 NULL 替换为：</label><input type="text"
+                                                                                                name="excel_null"
+                                                                                                value="NULL"
+                                                                                                id="text_excel_null">
+                        </li>
+                        <li>
+                            <input type="checkbox" name="excel_removeCRLF" value="something"
+                                   id="checkbox_excel_removeCRLF"><label
+                                for="checkbox_excel_removeCRLF">删除字段中的回车换行符</label></li>
+                        <li>
+                            <input type="checkbox" name="excel_columns" value="something"
+                                   id="checkbox_excel_columns"><label for="checkbox_excel_columns">首行保存字段名</label></li>
+                        <li>
+                            <label for="select_excel_edition" class="desc">Excel 版本:</label><select name="excel_edition"
+                                                                                                    id="select_excel_edition">
+                            <option value="win" selected="selected">Windows</option>
+                            <option value="mac_excel2003">Excel 2003 / Macintosh</option>
+                            <option value="mac_excel2008">Excel 2008 / Macintosh</option>
+                        </select></li>
+                        <li><input type="hidden" name="excel_structure_or_data" value="data"></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="htmlword_options" class="format_specific_options"
+                 style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                <div class="export_sub_options" id="htmlword_dump_what"><h4>转储表</h4>
+                    <ul>
+                        <li><input type="hidden" name="htmlword_structure_or_data" value="structure_and_data"><input
+                                type="hidden" name="htmlword_structure_or_data_default" value="structure_and_data"
+                                disabled=""></li>
+                    </ul>
+                </div>
+
+                <div class="export_sub_options" id="htmlword_dump_what"><h4>数据转储选项</h4>
+                    <ul>
+                        <li>
+                            <label for="text_htmlword_null" class="desc">将 NULL 替换为：</label><input type="text"
+                                                                                                   name="htmlword_null"
+                                                                                                   value="NULL"
+                                                                                                   id="text_htmlword_null">
+                        </li>
+                        <li>
+                            <input type="checkbox" name="htmlword_columns" value="something"
+                                   id="checkbox_htmlword_columns"><label for="checkbox_htmlword_columns">首行保存字段名</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="json_options" class="format_specific_options"
+                 style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                <div class="export_sub_options" id="json_general_opts">
+                    <ul>
+                        <li><input type="hidden" name="json_structure_or_data" value="data"></li>
+                        <li>
+                            <input type="checkbox" name="json_pretty_print" value="something"
+                                   id="checkbox_json_pretty_print"><label for="checkbox_json_pretty_print">Output
+                            pretty-printed JSON (Use human-readable formatting)</label></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="latex_options" class="format_specific_options"
+                 style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                <div class="export_sub_options" id="latex_general_opts">
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="latex_caption" value="something" id="checkbox_latex_caption"
+                                   checked="checked"><label for="checkbox_latex_caption">包含表说明</label></li>
+                    </ul>
+                </div>
+
+                <div class="export_sub_options" id="latex_dump_what"><h4>转储表</h4>
+                    <ul>
+                        <li><input type="hidden" name="latex_structure_or_data" value="structure_and_data"><input
+                                type="hidden" name="latex_structure_or_data_default" value="structure_and_data"
+                                disabled=""></li>
+                    </ul>
+                </div>
+
+                <div class="export_sub_options" id="latex_structure"><h4>对象创建选项</h4>
+                    <ul>
+                        <li>
+                            <label for="text_latex_structure_caption" class="desc">Table caption:</label><input
+                                type="text" name="latex_structure_caption" value="@TABLE@ 表的结构"
+                                id="text_latex_structure_caption"></li>
+                        <li>
+                            <label for="text_latex_structure_continued_caption" class="desc">Table caption
+                                (continued):</label><input type="text" name="latex_structure_continued_caption"
+                                                           value="@TABLE@ 表的结构 (延续的)"
+                                                           id="text_latex_structure_continued_caption"></li>
+                        <li>
+                            <label for="text_latex_structure_label" class="desc">Label key:</label><input type="text"
+                                                                                                          name="latex_structure_label"
+                                                                                                          value="tab:@TABLE@-structure"
+                                                                                                          id="text_latex_structure_label">
+                        </li>
+                        <li>
+                            <input type="checkbox" name="latex_comments" value="something" id="checkbox_latex_comments"
+                                   checked="checked"><label for="checkbox_latex_comments">显示注释</label></li>
+                    </ul>
+                </div>
+
+                <div class="export_sub_options" id="latex_data"><h4>数据转储选项</h4>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="latex_columns" value="something" id="checkbox_latex_columns"
+                                   checked="checked"><label for="checkbox_latex_columns">Put columns names in the first
+                            row:</label></li>
+                        <li>
+                            <label for="text_latex_data_caption" class="desc">Table caption:</label><input type="text"
+                                                                                                           name="latex_data_caption"
+                                                                                                           value="@TABLE@ 表的内容"
+                                                                                                           id="text_latex_data_caption">
+                        </li>
+                        <li>
+                            <label for="text_latex_data_continued_caption" class="desc">Table caption
+                                (continued):</label><input type="text" name="latex_data_continued_caption"
+                                                           value="@TABLE@ 表的内容 (延续的)"
+                                                           id="text_latex_data_continued_caption"></li>
+                        <li>
+                            <label for="text_latex_data_label" class="desc">Label key:</label><input type="text"
+                                                                                                     name="latex_data_label"
+                                                                                                     value="tab:@TABLE@-data"
+                                                                                                     id="text_latex_data_label">
+                        </li>
+                        <li>
+                            <label for="text_latex_null" class="desc">将 NULL 替换为：</label><input type="text"
+                                                                                                name="latex_null"
+                                                                                                value="\textit{NULL}"
+                                                                                                id="text_latex_null">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="mediawiki_options" class="format_specific_options"
+                 style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                <div class="export_sub_options" id="mediawiki_general_opts"><h4>转储表</h4>
+                    <ul>
+                        <li><input type="hidden" name="mediawiki_structure_or_data" value="structure_and_data"><input
+                                type="hidden" name="mediawiki_structure_or_data_default" value="data" disabled=""></li>
+                        <li class="subgroup">
+                            <ul id="ul_structure_or_data">
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="mediawiki_caption" value="something"
+                                   id="checkbox_mediawiki_caption" checked="checked"><label
+                                for="checkbox_mediawiki_caption">导出表名</label></li>
+                        <li>
+                            <input type="checkbox" name="mediawiki_headers" value="something"
+                                   id="checkbox_mediawiki_headers" checked="checked"><label
+                                for="checkbox_mediawiki_headers">导出表头</label></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="ods_options" class="format_specific_options"
+                 style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                <div class="export_sub_options" id="ods_general_opts">
+                    <ul>
+                        <li>
+                            <label for="text_ods_null" class="desc">将 NULL 替换为：</label><input type="text"
+                                                                                              name="ods_null"
+                                                                                              value="NULL"
+                                                                                              id="text_ods_null"></li>
+                        <li>
+                            <input type="checkbox" name="ods_columns" value="something" id="checkbox_ods_columns"><label
+                                for="checkbox_ods_columns">首行保存字段名</label></li>
+                        <li><input type="hidden" name="ods_structure_or_data" value="data"></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="odt_options" class="format_specific_options"
+                 style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                <div class="export_sub_options" id="odt_general_opts"><h4>转储表</h4>
+                    <ul>
+                        <li><input type="hidden" name="odt_structure_or_data" value="structure_and_data"><input
+                                type="hidden" name="odt_structure_or_data_default" value="structure_and_data"
+                                disabled=""></li>
+                    </ul>
+                </div>
+
+                <div class="export_sub_options" id="odt_structure"><h4>对象创建选项</h4>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="odt_comments" value="something" id="checkbox_odt_comments"
+                                   checked="checked"><label for="checkbox_odt_comments">显示注释</label></li>
+                    </ul>
+                </div>
+
+                <div class="export_sub_options" id="odt_data"><h4>数据转储选项</h4>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="odt_columns" value="something" id="checkbox_odt_columns"
+                                   checked="checked"><label for="checkbox_odt_columns">首行保存字段名</label></li>
+                        <li>
+                            <label for="text_odt_null" class="desc">将 NULL 替换为：</label><input type="text"
+                                                                                              name="odt_null"
+                                                                                              value="NULL"
+                                                                                              id="text_odt_null"></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="pdf_options" class="format_specific_options"
+                 style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                <div class="export_sub_options" id="pdf_general_opts">
+                    <ul>
+                        <li>
+                            <label for="text_pdf_report_title" class="desc">报告标题：</label><input type="text"
+                                                                                                name="pdf_report_title"
+                                                                                                value=""
+                                                                                                id="text_pdf_report_title">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="export_sub_options" id="pdf_dump_what"><h4>转储表</h4>
+                    <ul>
+                        <li><input type="hidden" name="pdf_structure_or_data" value="structure_and_data"><input
+                                type="hidden" name="pdf_structure_or_data_default" value="data" disabled=""></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="phparray_options" class="format_specific_options"
+                 style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                <div class="export_sub_options" id="phparray_general_opts">
+                    <ul>
+                        <li><input type="hidden" name="phparray_structure_or_data" value="data"></li>
+                    </ul>
+                </div>
+                <p>该格式没有选项</p></div>
+            <div id="sql_options" class="format_specific_options"
+                 style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                <div class="export_sub_options" id="sql_general_opts">
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="sql_include_comments" value="something"
+                                   id="checkbox_sql_include_comments" checked="checked"><label
+                                for="checkbox_sql_include_comments">显示注释 <i>(包括导出时间、PHP 版本和服务器版本等信息)</i></label></li>
+                        <li class="subgroup">
+                            <ul id="ul_include_comments">
+                                <li>
+                                    <label for="text_sql_header_comment" class="desc">在文件头添加自定义注释 (\n
+                                        为换行)：</label><input type="text" name="sql_header_comment" value=""
+                                                            id="text_sql_header_comment"></li>
+                                <li>
+                                    <input type="checkbox" name="sql_dates" value="something"
+                                           id="checkbox_sql_dates"><label
+                                        for="checkbox_sql_dates">包含数据库创建、最后更新和最后检查的时间</label></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="sql_use_transaction" value="something"
+                                   id="checkbox_sql_use_transaction"><label
+                                for="checkbox_sql_use_transaction">使用事务执行导出</label></li>
+                        <li>
+                            <input type="checkbox" name="sql_disable_fk" value="something" id="checkbox_sql_disable_fk"><label
+                                for="checkbox_sql_disable_fk">禁止外键约束</label></li>
+                        <li>
+                            <input type="checkbox" name="sql_views_as_tables" value="something"
+                                   id="checkbox_sql_views_as_tables"><label
+                                for="checkbox_sql_views_as_tables">将视图作为表导出</label></li>
+                        <li>
+                            <input type="checkbox" name="sql_metadata" value="something"
+                                   id="checkbox_sql_metadata"><label for="checkbox_sql_metadata">Export metadata</label>
+                        </li>
+                        <li>
+                            <label for="select_sql_compatibility" class="desc">最大程度兼容数据库系统或旧版本的 MySQL
+                                服务器：</label><select name="sql_compatibility" id="select_sql_compatibility">
+                            <option value="NONE" selected="selected">NONE</option>
+                            <option value="ANSI">ANSI</option>
+                            <option value="DB2">DB2</option>
+                            <option value="MAXDB">MAXDB</option>
+                            <option value="MYSQL323">MYSQL323</option>
+                            <option value="MYSQL40">MYSQL40</option>
+                            <option value="MSSQL">MSSQL</option>
+                            <option value="ORACLE">ORACLE</option>
+                            <option value="TRADITIONAL">TRADITIONAL</option>
+                        </select>
+                        </li>
+                        <li><input type="hidden" name="sql_structure_or_data" value="structure_and_data"><input
+                                type="hidden" name="sql_structure_or_data_default" value="structure_and_data"
+                                disabled=""></li>
+                        <li class="subgroup">
+                            <ul id="ul_structure_or_data">
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="export_sub_options" id="sql_structure" style=""><h4>对象创建选项</h4>
+                    <ul>
+                        <li>
+                            <p>添加语句：</p></li>
+                        <li class="subgroup">
+                            <ul id="ul_add_statements">
+                                <li>
+                                    <input type="checkbox" name="sql_create_database" value="something"
+                                           id="checkbox_sql_create_database"><label for="checkbox_sql_create_database">添加
+                                    <code>CREATE DATABASE / USE</code> 语句</label></li>
+                                <li>
+                                    <input type="checkbox" name="sql_drop_table" value="something"
+                                           id="checkbox_sql_drop_table"><label for="checkbox_sql_drop_table">添加 <code>DROP
+                                    TABLE / VIEW / PROCEDURE / FUNCTION / EVENT</code><code> / TRIGGER</code> 语句</label>
+                                </li>
+                                <li style="opacity: 0.4;">
+                                    <input type="checkbox" name="sql_create_table" value="something"
+                                           id="checkbox_sql_create_table" checked="checked" disabled=""><input
+                                        type="hidden" name="sql_create_table" value="something" checked="checked"><label
+                                        for="checkbox_sql_create_table">添加 <code>CREATE TABLE</code> 语句</label></li>
+                                <li class="subgroup">
+                                    <ul id="ul_create_table">
+                                        <li>
+                                            <input type="checkbox" name="sql_if_not_exists" value="something"
+                                                   id="checkbox_sql_if_not_exists"><label
+                                                for="checkbox_sql_if_not_exists"><code>IF NOT EXISTS</code> (less
+                                            efficient as indexes will be generated during table creation)</label></li>
+                                        <li>
+                                            <input type="checkbox" name="sql_auto_increment" value="something"
+                                                   id="checkbox_sql_auto_increment" checked="checked"><label
+                                                for="checkbox_sql_auto_increment"><code>AUTO_INCREMENT</code>
+                                            value</label></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="sql_create_view" value="something"
+                                           id="checkbox_sql_create_view" checked="checked"><label
+                                        for="checkbox_sql_create_view">添加 <code>CREATE VIEW</code> 语句</label></li>
+                                <li>
+                                    <input type="checkbox" name="sql_procedure_function" value="something"
+                                           id="checkbox_sql_procedure_function" checked="checked"><label
+                                        for="checkbox_sql_procedure_function">添加 <code>CREATE PROCEDURE / FUNCTION /
+                                    EVENT</code> 语句</label></li>
+                                <li>
+                                    <input type="checkbox" name="sql_create_trigger" value="something"
+                                           id="checkbox_sql_create_trigger" checked="checked"><label
+                                        for="checkbox_sql_create_trigger">添加 <code>CREATE TRIGGER</code> 语句</label></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="sql_backquotes" value="something" id="checkbox_sql_backquotes"
+                                   checked="checked"><label for="checkbox_sql_backquotes">给表和字段名加上反引号 <i>(保护名称中含有特殊字符或保留字的字段和表)</i></label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="export_sub_options" id="sql_data" style=""><h4>数据创建选项</h4>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="sql_truncate" value="something"
+                                   id="checkbox_sql_truncate"><label
+                                for="checkbox_sql_truncate">插入之前先把表清空（truncate）</label>
+                        </li>
+                        <li>
+                            <p></p></li>
+                        <li class="subgroup">
+                            <ul id="ul_代替 <code>INSERT (插入)</code> 语句，使用：">
+                                <li>
+                                    <input type="checkbox" name="sql_delayed" value="something"
+                                           id="checkbox_sql_delayed"><label for="checkbox_sql_delayed"><code>INSERT
+                                    DELAYED (延迟插入)</code> 语句</label></li>
+                                <li>
+                                    <input type="checkbox" name="sql_ignore" value="something" id="checkbox_sql_ignore"><label
+                                        for="checkbox_sql_ignore"><code>INSERT IGNORE (忽略插入)</code> 语句</label></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <label for="select_sql_type" class="desc">转储数据时所使用的函数：</label><select name="sql_type"
+                                                                                                  id="select_sql_type">
+                            <option value="INSERT" selected="selected">INSERT</option>
+                            <option value="UPDATE">UPDATE</option>
+                            <option value="REPLACE">REPLACE</option>
+                        </select>
+                        </li>
+                        <li>
+                            <p>插入数据时所使用的语法：</p></li>
+                        <li class="subgroup">
+                            <ul id="ul_">
+                                <li><input type="radio" name="sql_insert_syntax" value="complete"
+                                           id="radio_sql_insert_syntax_complete"><label
+                                        for="radio_sql_insert_syntax_complete">给每个 <code>INSERT (插入)</code> 语句加上字段名 <br>
+                                    &nbsp; &nbsp; &nbsp; 如：<code>INSERT INTO tbl_name (col_A,col_B,col_C) VALUES
+                                        (1,2,3)</code></label></li>
+                                <li><input type="radio" name="sql_insert_syntax" value="extended"
+                                           id="radio_sql_insert_syntax_extended"><label
+                                        for="radio_sql_insert_syntax_extended">在每个 <code>INSERT(插入)</code> 语句中插入多行<br>
+                                    &nbsp; &nbsp; &nbsp; 如：<code>INSERT INTO tbl_name VALUES (1,2,3), (4,5,6),
+                                        (7,8,9)</code></label></li>
+                                <li><input type="radio" name="sql_insert_syntax" value="both"
+                                           id="radio_sql_insert_syntax_both" checked="checked"><label
+                                        for="radio_sql_insert_syntax_both">both of the above<br> &nbsp; &nbsp; &nbsp;
+                                    Example: <code>INSERT INTO tbl_name (col_A,col_B,col_C) VALUES (1,2,3), (4,5,6),
+                                        (7,8,9)</code></label></li>
+                                <li><input type="radio" name="sql_insert_syntax" value="none"
+                                           id="radio_sql_insert_syntax_none"><label for="radio_sql_insert_syntax_none">以上均不<br>
+                                    &nbsp; &nbsp; &nbsp; 如：<code>INSERT INTO tbl_name VALUES (1,2,3)</code></label></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <label for="text_sql_max_query_size" class="desc">查询语句的最大长度</label><input type="text"
+                                                                                                      name="sql_max_query_size"
+                                                                                                      value="50000"
+                                                                                                      id="text_sql_max_query_size">
+                        </li>
+                        <li>
+                            <input type="checkbox" name="sql_hex_for_binary" value="something"
+                                   id="checkbox_sql_hex_for_binary" checked="checked"><label
+                                for="checkbox_sql_hex_for_binary">转储二进制字段时用十六进制标记 <i>(例如，“abc”将用 0x616263
+                            表示)</i></label></li>
+                        <li>
+                            <input type="checkbox" name="sql_utc_time" value="something" id="checkbox_sql_utc_time"
+                                   checked="checked"><label for="checkbox_sql_utc_time">转储 TIMESTAMP 字段时用 UTC 时区 <i>(允许在不同时区的服务器间转储和重新载入
+                            TIMESTAMP 字段)</i></label></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="texytext_options" class="format_specific_options"
+                 style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                <div class="export_sub_options" id="texytext_general_opts"><h4>转储表</h4>
+                    <ul>
+                        <li><input type="hidden" name="texytext_structure_or_data" value="structure_and_data"><input
+                                type="hidden" name="texytext_structure_or_data_default" value="structure_and_data"
+                                disabled=""></li>
+                    </ul>
+                </div>
+
+                <div class="export_sub_options" id="texytext_data"><h4>数据转储选项</h4>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="texytext_columns" value="something"
+                                   id="checkbox_texytext_columns"><label for="checkbox_texytext_columns">首行保存字段名</label>
+                        </li>
+                        <li>
+                            <label for="text_texytext_null" class="desc">将 NULL 替换为：</label><input type="text"
+                                                                                                   name="texytext_null"
+                                                                                                   value="NULL"
+                                                                                                   id="text_texytext_null">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="xml_options" class="format_specific_options"
+                 style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                <div class="export_sub_options" id="xml_general_opts">
+                    <ul>
+                        <li><input type="hidden" name="xml_structure_or_data" value="data"></li>
+                    </ul>
+                </div>
+
+                <div class="export_sub_options" id="xml_structure"><h4>对象创建选项 (推荐全选)</h4>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="xml_export_events" value="something"
+                                   id="checkbox_xml_export_events" checked="checked"><label
+                                for="checkbox_xml_export_events">事件</label></li>
+                        <li>
+                            <input type="checkbox" name="xml_export_functions" value="something"
+                                   id="checkbox_xml_export_functions" checked="checked"><label
+                                for="checkbox_xml_export_functions">函数</label></li>
+                        <li>
+                            <input type="checkbox" name="xml_export_procedures" value="something"
+                                   id="checkbox_xml_export_procedures" checked="checked"><label
+                                for="checkbox_xml_export_procedures">存储过程</label></li>
+                        <li>
+                            <input type="checkbox" name="xml_export_tables" value="something"
+                                   id="checkbox_xml_export_tables" checked="checked"><label
+                                for="checkbox_xml_export_tables">表</label></li>
+                        <li>
+                            <input type="checkbox" name="xml_export_triggers" value="something"
+                                   id="checkbox_xml_export_triggers" checked="checked"><label
+                                for="checkbox_xml_export_triggers">触发器</label></li>
+                        <li>
+                            <input type="checkbox" name="xml_export_views" value="something"
+                                   id="checkbox_xml_export_views" checked="checked"><label
+                                for="checkbox_xml_export_views">视图</label></li>
+                    </ul>
+                </div>
+
+                <div class="export_sub_options" id="xml_data"><h4>数据转储选项</h4>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="xml_export_contents" value="something"
+                                   id="checkbox_xml_export_contents" checked="checked"><label
+                                for="checkbox_xml_export_contents">导出内容</label></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="yaml_options" class="format_specific_options"
+                 style="display: none; border: 0px; margin: 0px; padding: 0px;">
+                <div class="export_sub_options" id="yaml_general_opts">
+                    <ul>
+                        <li><input type="hidden" name="yaml_structure_or_data" value="data"></li>
+                    </ul>
+                </div>
+                <p>该格式没有选项</p></div>
+        </div>
+        <div class="exportoptions" id="submit"><input type="submit" value="执行" id="buttonGo"
+                                                      onclick="check_time_out(300)"></div>
+    </form>
+</div>
